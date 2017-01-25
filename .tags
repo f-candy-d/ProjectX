@@ -6035,3 +6035,14 @@ _bitLayers	/home/daichi/dev/cocos.projects/ProjectX/Classes/UnifiedLayer.h	/^	co
 _mapSize	/home/daichi/dev/cocos.projects/ProjectX/Classes/UnifiedLayer.h	/^	cocos2d::Size _mapSize;$/;"	member	line:21	class:UnifiedLayer
 _directory	/home/daichi/dev/cocos.projects/ProjectX/Classes/UnifiedLayer.h	/^	std::string _directory;$/;"	member	line:22	class:UnifiedLayer
 _tiles	/home/daichi/dev/cocos.projects/ProjectX/Classes/UnifiedLayer.h	/^	int* _tiles;$/;"	member	line:23	class:UnifiedLayer
+TM2P5D_COMMON_INFO_H	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^#define TM2P5D_COMMON_INFO_H$/;"	macro	line:2
+TM2P5DCommonInfo	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^class TM2P5DCommonInfo : public cocos2d::Ref$/;"	class	line:8
+_atlasRectNode	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^	std::unordered_map<std::string,std::unordered_map<int,cocos2d::Rect>*> _atlasRectNode;$/;"	member	line:16	class:TM2P5DCommonInfo
+TM2P5D_COMMON_INFO_H	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^#define TM2P5D_COMMON_INFO_H$/;"	macro	line:2
+TM2P5DCommonInfo	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^class TM2P5DCommonInfo : public cocos2d::Ref$/;"	class	line:8
+_atlasRectNode	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^	std::unordered_map<std::string,std::unordered_map<int,cocos2d::Rect>*> _atlasRectNode;$/;"	member	line:16	class:TM2P5DCommonInfo
+TM2P5DCommonInfo	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^TM2P5DCommonInfo::TM2P5DCommonInfo()$/;"	function	line:9	class:TM2P5DCommonInfo	signature:()
+~TM2P5DCommonInfo	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^TM2P5DCommonInfo::~TM2P5DCommonInfo()$/;"	function	line:12	class:TM2P5DCommonInfo	signature:()
+initWithMapInfo	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^bool TM2P5DCommonInfo::initWithMapInfo(std::string file)$/;"	function	line:15	class:TM2P5DCommonInfo	signature:(std::string file)
+createWithMapInfo	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^TM2P5DCommonInfo* TM2P5DCommonInfo::createWithMapInfo(std::string file)$/;"	function	line:28	class:TM2P5DCommonInfo	signature:(std::string file)
+getRectOnTextureAtlasForTileType	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^Rect TM2P5DCommonInfo::getRectOnTextureAtlasForTileType(int type)$/;"	function	line:41	class:TM2P5DCommonInfo	signature:(int type)

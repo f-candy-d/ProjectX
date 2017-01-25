@@ -4,9 +4,8 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-UNIFIED_LAYER_H	/home/daichi/dev/cocos.projects/ProjectX/Classes/UnifiedLayer.h	/^#define UNIFIED_LAYER_H$/;"	macro	line:2
-UnifiedLayer	/home/daichi/dev/cocos.projects/ProjectX/Classes/UnifiedLayer.h	/^class UnifiedLayer : public cocos2d::Node$/;"	class	line:7
-_bitLayers	/home/daichi/dev/cocos.projects/ProjectX/Classes/UnifiedLayer.h	/^	cocos2d::Vector<BitLayer*> _bitLayers;$/;"	member	line:20	class:UnifiedLayer
-_mapSize	/home/daichi/dev/cocos.projects/ProjectX/Classes/UnifiedLayer.h	/^	cocos2d::Size _mapSize;$/;"	member	line:21	class:UnifiedLayer
-_directory	/home/daichi/dev/cocos.projects/ProjectX/Classes/UnifiedLayer.h	/^	std::string _directory;$/;"	member	line:22	class:UnifiedLayer
-_tiles	/home/daichi/dev/cocos.projects/ProjectX/Classes/UnifiedLayer.h	/^	int* _tiles;$/;"	member	line:23	class:UnifiedLayer
+TM2P5DCommonInfo	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^TM2P5DCommonInfo::TM2P5DCommonInfo()$/;"	function	line:9	class:TM2P5DCommonInfo	signature:()
+~TM2P5DCommonInfo	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^TM2P5DCommonInfo::~TM2P5DCommonInfo()$/;"	function	line:12	class:TM2P5DCommonInfo	signature:()
+initWithMapInfo	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^bool TM2P5DCommonInfo::initWithMapInfo(std::string file)$/;"	function	line:15	class:TM2P5DCommonInfo	signature:(std::string file)
+createWithMapInfo	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^TM2P5DCommonInfo* TM2P5DCommonInfo::createWithMapInfo(std::string file)$/;"	function	line:28	class:TM2P5DCommonInfo	signature:(std::string file)
+getRectOnTextureAtlasForTileType	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^Rect TM2P5DCommonInfo::getRectOnTextureAtlasForTileType(int type)$/;"	function	line:41	class:TM2P5DCommonInfo	signature:(int type)
