@@ -9,33 +9,45 @@ USING_NS_CC;
  */
 
 BitLayer::BitLayer()
-:_tileInfoHashMap()
-,_tile_atlas_file("")
+:_tileAtlasFile("")
 ,_isVisible(false)
+,_isFailedLoadingFile(false)
 ,_tileSize(0,0)
+,_bitFlag(-1)
+,_spriteBatchNode(nullptr)
 {}
 
 BitLayer::~BitLayer()
-{}
+{
+	//release objects
+	CC_SAFE_RELEASE_NULL(_spriteBatchNode);
+}
 
 bool BitLayer::initWithLayerInfoFile(std::string file)
 {
 	if(!parseLayerInfoFile(file))
-		return false;
-
-	TileInfo info;
-	int c = 0;
-	for(auto itr = _tileInfoHashMap.begin(); itr != _tileInfoHashMap.end(); ++itr)
 	{
-		info = itr->second;
-		log("[TILE-INFO] :: X=%d	Y=%d	TILE_TYPE=%d",info.x,info.y,info.tileType);
-		c++;
+		//If initialization is failed...
+		log("WARNING!! :: Loading '%s' was failed in BitLayer class.",file.c_str());
+		_isFailedLoadingFile = true;
+		return false;
 	}
+	//
+	// TileInfo info;
+	// int c = 0;
+	// for(auto itr = _tileInfoHashMap.begin(); itr != _tileInfoHashMap.end(); ++itr)
+	// {
+	// 	info = itr->second;
+	// 	log("[TILE-INFO] :: X=%d	Y=%d	TILE_TYPE=%d",info.x,info.y,info.tileType);
+	// 	c++;
+	// }
+	// log("!--%d tiles--!",c);
+	// log("[IS-VISIBLE] :: %s",(_isVisible)?"true":"false");
+	// log("[TILE-ATLAS-FILE] :: %s",_tileAtlasFile.c_str());
+	// log("[TILE-SIZE] :: W=%d	H=%d",(int)_tileSize.width,(int)_tileSize.height);
 
-	log("!--%d tiles--!",c);
-	log("[IS-VISIBLE] :: %s",(_isVisible)?"true":"false");
-	log("[TILE-ATLAS-FILE] :: %s",_tile_atlas_file.c_str());
-	log("[TILE-SIZE] :: W=%d	H=%d",(int)_tileSize.width,(int)_tileSize.height);
+	//Own SpriteBatchNode
+	makeOwnSpriteBatchNode();
 
 	return true;
 }
@@ -52,52 +64,52 @@ bool BitLayer::parseLayerInfoFile(std::string file)
 	if(i_file_stream.fail())
 		return false;
 
-	log("Read file :: %s",file.c_str());
+	// log("Read file :: %s",file.c_str());
 	while(!i_file_stream.eof())
 	{
 		//Read by line.
 		std::getline(i_file_stream,line_buff);
-		log("Line is '%s'",line_buff.c_str());
+		// log("Line is '%s'",line_buff.c_str());
 		//Parse the layer-info-file.
-		if(line_buff == "#BEGIN_TILE_INFO")
+		if(line_buff.find("BEGIN_TILE_INFO") != (size_t)-1)
 		{
-			log("in #BEGIN_TILE_INFO");
+			// log("in #BEGIN_TILE_INFO");
 			//Make a TileInfo object.
 			TileInfo info = {0,0,0-1};
 
 			std::getline(i_file_stream,line_buff);
-			log("Line is '%s'",line_buff.c_str());
-			if(line_buff == "#X_COORDINATE")
+			// log("Line is '%s'",line_buff.c_str());
+			if(line_buff.find("X_COORDINATE") != (size_t)-1)
 			{
-				log("in #X_COORIDINATE");
+				// log("in #X_COORIDINATE");
 				//X coordinate.
 				std::getline(i_file_stream,line_buff);
-				log("Line is '%s'",line_buff.c_str());
+				// log("Line is '%s'",line_buff.c_str());
 				sscanf(line_buff.c_str(),"%d",&info.x);
 			} else
 				return false;
 
 			std::getline(i_file_stream,line_buff);
-			log("Line is '%s'",line_buff.c_str());
-			if(line_buff == "#Y_COORDINATE")
+			// log("Line is '%s'",line_buff.c_str());
+			if(line_buff.find("Y_COORDINATE") != (size_t)-1)
 			{
-				log("in #Y_COORIDINATE");
+				// log("in #Y_COORIDINATE");
 				//Y coordinate.
 				std::getline(i_file_stream,line_buff);
-				log("Line is '%s'",line_buff.c_str());
+				// log("Line is '%s'",line_buff.c_str());
 				sscanf(line_buff.c_str(),"%d",&info.y);
 
 			} else
 				return false;
 
 			std::getline(i_file_stream,line_buff);
-			log("Line is '%s'",line_buff.c_str());
-			if(line_buff == "#TILE_TYPE")
+			// log("Line is '%s'",line_buff.c_str());
+			if(line_buff.find("TILE_TYPE") != (size_t)-1)
 			{
-				log("in #TILE_TYPE");
+				// log("in #TILE_TYPE");
 				//Tile-type
 				std::getline(i_file_stream,line_buff);
-				log("Line is '%s'",line_buff.c_str());
+				// log("Line is '%s'",line_buff.c_str());
 				sscanf(line_buff.c_str(),"%d",&info.tileType);
 			} else
 				return false;
@@ -109,44 +121,44 @@ bool BitLayer::parseLayerInfoFile(std::string file)
 				return false;
 
 			std::getline(i_file_stream,line_buff);
-			log("Line is '%s'",line_buff.c_str());
-			if(line_buff != "#END_TILE_INFO")
+			// log("Line is '%s'",line_buff.c_str());
+			if(line_buff.find("END_TILE_INFO") == (size_t)-1)
 				return false;
 
 		}
-		else if(line_buff == "#IS_VISIBLE")
+		else if(line_buff.find("IS_VISIBLE") != (size_t)-1)
 		{
-			log("in #IS_VISIBLE");
+			// log("in #IS_VISIBLE");
 			int b;
 			std::getline(i_file_stream,line_buff);
-			log("Line is '%s'",line_buff.c_str());
+			// log("Line is '%s'",line_buff.c_str());
 			sscanf(line_buff.c_str(),"%d",&b);
 			_isVisible = static_cast<bool>(b);
 		}
-		else if(line_buff == "#TILE_ATLAS_FILE")
+		else if(line_buff.find("TILE_ATLAS_FILE") != (size_t)-1)
 		{
-			log("in #TILE_ATLAS_FILE");
+			// log("in #TILE_ATLAS_FILE");
 			std::getline(i_file_stream,line_buff);
-			log("Line is '%s'",line_buff.c_str());
-			_tile_atlas_file = line_buff;
+			// log("Line is '%s'",line_buff.c_str());
+			_tileAtlasFile = line_buff;
 		}
-		else if(line_buff == "#TILE_SIZE_W")
+		else if(line_buff.find("TILE_SIZE_W") != (size_t)-1)
 		{
-			log("in #TILE_SIZE_W");
+			// log("in #TILE_SIZE_W");
 			std::getline(i_file_stream,line_buff);
-			log("Line is '%s'",line_buff.c_str());
+			// log("Line is '%s'",line_buff.c_str());
 			sscanf(line_buff.c_str(),"%f",&_tileSize.width);
 		}
-		else if(line_buff == "#TILE_SIZE_H")
+		else if(line_buff.find("TILE_SIZE_H") != (size_t)-1)
 		{
-			log("in #TILE_SIZE_H");
+			// log("in #TILE_SIZE_H");
 			std::getline(i_file_stream,line_buff);
-			log("Line is '%s'",line_buff.c_str());
+			// log("Line is '%s'",line_buff.c_str());
 			sscanf(line_buff.c_str(),"%f",&_tileSize.height);
 		}
 	}
 
-	log("End of paresing file.");
+	// log("End of paresing file.");
 
 	return true;
 }
@@ -218,6 +230,18 @@ Vec2 BitLayer::decodeHashXYD(unsigned int hash)
 }
 
 /**
+ * This function will be only called in initWithLayerInfoFile() function.
+ */
+void BitLayer::makeOwnSpriteBatchNode()
+{
+	if(_isVisible && !_tileInfoHashMap.empty() && _spriteBatchNode == nullptr) {
+		//Own SpriteBatchNode
+		auto sprite_batch_node = SpriteBatchNode::create("tm2p5d/test_tile_atlas.png");
+		this->setSpriteBatchNode(sprite_batch_node);
+	}
+}
+
+/**
  * Public functions
  */
 
@@ -239,7 +263,12 @@ TileInfo BitLayer::getTileInfoAtGridPos(unsigned int x,unsigned int y)
 
 }
 
-SpriteBatchNode* BitLayer::getSpriteBatchNode()
+bool BitLayer::isOwnAnyTileAt(unsigned int x,unsigned int y)
 {
+	return (_tileInfoHashMap.find(makeHashXYD(x,y)) != _tileInfoHashMap.end());
+}
 
+bool BitLayer::isVisible()
+{
+	return _isVisible;
 }

@@ -4,6 +4,9 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-createScene	/home/daichi/dev/cocos.projects/ProjectX/Classes/HelloWorldScene.cpp	/^Scene* HelloWorld::createScene()$/;"	function	line:7	class:HelloWorld	signature:()
-init	/home/daichi/dev/cocos.projects/ProjectX/Classes/HelloWorldScene.cpp	/^bool HelloWorld::init()$/;"	function	line:26	class:HelloWorld	signature:()
-menuCloseCallback	/home/daichi/dev/cocos.projects/ProjectX/Classes/HelloWorldScene.cpp	/^void HelloWorld::menuCloseCallback(Ref* pSender)$/;"	function	line:84	class:HelloWorld	signature:(Ref* pSender)
+UNIFIED_LAYER_H	/home/daichi/dev/cocos.projects/ProjectX/Classes/UnifiedLayer.h	/^#define UNIFIED_LAYER_H$/;"	macro	line:2
+UnifiedLayer	/home/daichi/dev/cocos.projects/ProjectX/Classes/UnifiedLayer.h	/^class UnifiedLayer : public cocos2d::Node$/;"	class	line:7
+_bitLayers	/home/daichi/dev/cocos.projects/ProjectX/Classes/UnifiedLayer.h	/^	cocos2d::Vector<BitLayer*> _bitLayers;$/;"	member	line:20	class:UnifiedLayer
+_mapSize	/home/daichi/dev/cocos.projects/ProjectX/Classes/UnifiedLayer.h	/^	cocos2d::Size _mapSize;$/;"	member	line:21	class:UnifiedLayer
+_directory	/home/daichi/dev/cocos.projects/ProjectX/Classes/UnifiedLayer.h	/^	std::string _directory;$/;"	member	line:22	class:UnifiedLayer
+_tiles	/home/daichi/dev/cocos.projects/ProjectX/Classes/UnifiedLayer.h	/^	int* _tiles;$/;"	member	line:23	class:UnifiedLayer

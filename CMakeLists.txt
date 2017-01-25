@@ -131,6 +131,7 @@ set(GAME_SRC
   Classes/AppDelegate.cpp
   Classes/HelloWorldScene.cpp
   Classes/BitLayer.cpp
+  Classes/UnifiedLayer.cpp
   ${PLATFORM_SPECIFIC_SRC}
 )
 
@@ -138,6 +139,7 @@ set(GAME_HEADERS
   Classes/AppDelegate.h
   Classes/HelloWorldScene.h
   Classes/BitLayer.h
+  Classes/UnifiedLayer.h
   ${PLATFORM_SPECIFIC_HEADERS}
 )
 

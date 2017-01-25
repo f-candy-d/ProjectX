@@ -1,6 +1,6 @@
 #include "HelloWorldScene.h"
 #include "SimpleAudioEngine.h"
-#include "BitLayer.h"
+#include "UnifiedLayer.h"
 
 USING_NS_CC;
 
@@ -16,7 +16,11 @@ Scene* HelloWorld::createScene()
     scene->addChild(layer);
 
     //test
-    auto bitLayer = BitLayer::createWithLayerInfoFile("Resources/TM2P5D/layerB.dat");
+    auto unified_lahyer = UnifiedLayer::createWithMapInfo("Resources/tm2p5d/",Size(9,6));
+    int tag = 1 << 0;
+    unified_lahyer->addBitLayer("layerB.dat",tag);
+    tag = 1 << 1;
+    unified_lahyer->addBitLayer("layerA.dat",tag);
 
     // return the scene
     return scene;

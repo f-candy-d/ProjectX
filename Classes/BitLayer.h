@@ -20,9 +20,12 @@ protected:
 
 private:
 	std::unordered_map<unsigned int,TileInfo> _tileInfoHashMap;
-	std::string _tile_atlas_file;
+	std::string _tileAtlasFile;
 	bool _isVisible;
+	bool _isFailedLoadingFile;
 	cocos2d::Size _tileSize;
+	CC_SYNTHESIZE(int,_bitFlag,BitFlag);
+	CC_SYNTHESIZE_RETAIN(cocos2d::SpriteBatchNode*,_spriteBatchNode,SpriteBatchNode);
 
 	/**
 	 * [parseLayerInfoFile description]
@@ -52,6 +55,11 @@ private:
 	 */
 	cocos2d::Vec2 decodeHashXYD(unsigned int hash);
 
+	/**
+	 * [makeOwnSpriteBatchNode description]
+	 */
+	void makeOwnSpriteBatchNode();
+
 public:
 	/**
 	 * [createWithLayerInfoFile description]
@@ -69,10 +77,16 @@ public:
 	TileInfo getTileInfoAtGridPos(unsigned int x,unsigned int y);
 
 	/**
-	 * [getSpriteBatchNode description]
-	 * @return [description]
+	 * If this layer has any tile at (x,y) ,return true.
+	 * Otherwise return false.
+	 * @param  x [x position on grid cooridinate]
+	 * @param  y [y position on grid cooridinate]
+	 * @return   [ture or false]
 	 */
-	cocos2d::SpriteBatchNode* getSpriteBatchNode();
+	bool isOwnAnyTileAt(unsigned int x,unsigned int y);
+
+	bool isVisible();
+
 };
 
 #endif /* defined(BIT_LAYER_H) */
