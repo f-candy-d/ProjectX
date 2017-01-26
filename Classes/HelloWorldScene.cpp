@@ -1,6 +1,8 @@
 #include "HelloWorldScene.h"
 #include "SimpleAudioEngine.h"
 #include "UnifiedLayer.h"
+#include "TiledMap2P5D.h"
+#include "TM2P5DCommonInfo.h"
 
 USING_NS_CC;
 
@@ -21,6 +23,8 @@ Scene* HelloWorld::createScene()
     unified_lahyer->addBitLayer("layerB.dat",tag);
     tag = 1 << 1;
     unified_lahyer->addBitLayer("layerA.dat",tag);
+    auto map = TiledMap2P5D::create("");
+    auto shared = TM2P5DCommonInfo::getInstance();
 
     // return the scene
     return scene;

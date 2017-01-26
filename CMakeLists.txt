@@ -132,6 +132,7 @@ set(GAME_SRC
   Classes/HelloWorldScene.cpp
   Classes/BitLayer.cpp
   Classes/UnifiedLayer.cpp
+  Classes/TiledMap2P5D.cpp
   Classes/TM2P5DCommonInfo.cpp
   ${PLATFORM_SPECIFIC_SRC}
 )
@@ -141,6 +142,7 @@ set(GAME_HEADERS
   Classes/HelloWorldScene.h
   Classes/BitLayer.h
   Classes/UnifiedLayer.h
+  Classes/TiledMap2P5D.h
   Classes/TM2P5DCommonInfo.h
   ${PLATFORM_SPECIFIC_HEADERS}
 )
