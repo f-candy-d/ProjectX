@@ -23,6 +23,7 @@ private:
 	StrArray _allLayers;
 	StrArray* _unifiledLayerHeads;
 	std::unordered_map<std::string,int> _tileSheetNode;
+	std::string _directory;
 	bool _isLoadingFileFailed;
 
 	/**
