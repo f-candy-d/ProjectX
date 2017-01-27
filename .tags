@@ -5963,9 +5963,6 @@ translateCurve	/home/daichi/dev/cocos.projects/ProjectX/cocos2d/cocos/3d/CCAnima
 rotCurve	/home/daichi/dev/cocos.projects/ProjectX/cocos2d/cocos/3d/CCAnimation3D.h	/^        AnimationCurveQuat* rotCurve;$/;"	member	line:60	class:Animation3D::Curve
 scaleCurve	/home/daichi/dev/cocos.projects/ProjectX/cocos2d/cocos/3d/CCAnimation3D.h	/^        AnimationCurveVec3* scaleCurve;$/;"	member	line:62	class:Animation3D::Curve
 バイナリファイル /home/daichi/dev/cocos.projects/ProjectX/.tags に一致しました
-createScene	/home/daichi/dev/cocos.projects/ProjectX/Classes/HelloWorldScene.cpp	/^Scene* HelloWorld::createScene()$/;"	function	line:7	class:HelloWorld	signature:()
-init	/home/daichi/dev/cocos.projects/ProjectX/Classes/HelloWorldScene.cpp	/^bool HelloWorld::init()$/;"	function	line:30	class:HelloWorld	signature:()
-menuCloseCallback	/home/daichi/dev/cocos.projects/ProjectX/Classes/HelloWorldScene.cpp	/^void HelloWorld::menuCloseCallback(Ref* pSender)$/;"	function	line:88	class:HelloWorld	signature:(Ref* pSender)
 BIT_LAYER_H	/home/daichi/dev/cocos.projects/ProjectX/Classes/BitLayer.h	/^#define BIT_LAYER_H$/;"	macro	line:2
 x	/home/daichi/dev/cocos.projects/ProjectX/Classes/BitLayer.h	/^	unsigned int x;$/;"	member	line:9	struct:__anon1
 y	/home/daichi/dev/cocos.projects/ProjectX/Classes/BitLayer.h	/^	unsigned int y;$/;"	member	line:10	struct:__anon1
@@ -6035,22 +6032,27 @@ _bitLayers	/home/daichi/dev/cocos.projects/ProjectX/Classes/UnifiedLayer.h	/^	co
 _mapSize	/home/daichi/dev/cocos.projects/ProjectX/Classes/UnifiedLayer.h	/^	cocos2d::Size _mapSize;$/;"	member	line:21	class:UnifiedLayer
 _directory	/home/daichi/dev/cocos.projects/ProjectX/Classes/UnifiedLayer.h	/^	std::string _directory;$/;"	member	line:22	class:UnifiedLayer
 _tiles	/home/daichi/dev/cocos.projects/ProjectX/Classes/UnifiedLayer.h	/^	int* _tiles;$/;"	member	line:23	class:UnifiedLayer
+createScene	/home/daichi/dev/cocos.projects/ProjectX/Classes/HelloWorldScene.cpp	/^Scene* HelloWorld::createScene()$/;"	function	line:9	class:HelloWorld	signature:()
+init	/home/daichi/dev/cocos.projects/ProjectX/Classes/HelloWorldScene.cpp	/^bool HelloWorld::init()$/;"	function	line:34	class:HelloWorld	signature:()
+menuCloseCallback	/home/daichi/dev/cocos.projects/ProjectX/Classes/HelloWorldScene.cpp	/^void HelloWorld::menuCloseCallback(Ref* pSender)$/;"	function	line:92	class:HelloWorld	signature:(Ref* pSender)
 TM2P5D_COMMON_INFO_H	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^#define TM2P5D_COMMON_INFO_H$/;"	macro	line:2
-StrArray	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^typedef std::string* StrArray;$/;"	typedef	line:7
-TM2P5DCommonInfo	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^class TM2P5DCommonInfo : public cocos2d::Ref$/;"	class	line:12
-_numOfUnifiedLayers	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^	int _numOfUnifiedLayers;$/;"	member	line:19	class:TM2P5DCommonInfo
-_numOfAllLayers	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^	int _numOfAllLayers;$/;"	member	line:20	class:TM2P5DCommonInfo
-_gridSize	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^	cocos2d::Size _gridSize;$/;"	member	line:21	class:TM2P5DCommonInfo
-_tileSizePx	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^	cocos2d::Size _tileSizePx;$/;"	member	line:22	class:TM2P5DCommonInfo
-_allLayers	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^	StrArray _allLayers;$/;"	member	line:23	class:TM2P5DCommonInfo
-_unifiledLayerHeads	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^	StrArray* _unifiledLayerHeads;$/;"	member	line:24	class:TM2P5DCommonInfo
-_tileSheetNode	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^	std::unordered_map<std::string,int> _tileSheetNode;$/;"	member	line:25	class:TM2P5DCommonInfo
-_directory	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^	std::string _directory;$/;"	member	line:26	class:TM2P5DCommonInfo
-_isLoadingFileFailed	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^	bool _isLoadingFileFailed;$/;"	member	line:27	class:TM2P5DCommonInfo
+StrVector	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^typedef std::vector<std::string> StrVector;$/;"	typedef	line:8
+ItrVector	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^typedef std::vector<StrVector::iterator> ItrVector;$/;"	typedef	line:9
+TM2P5DCommonInfo	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^class TM2P5DCommonInfo : public cocos2d::Ref$/;"	class	line:14
+_numOfUnifiedLayers	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^	int _numOfUnifiedLayers;$/;"	member	line:21	class:TM2P5DCommonInfo
+_numOfAllLayers	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^	int _numOfAllLayers;$/;"	member	line:22	class:TM2P5DCommonInfo
+_gridSize	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^	cocos2d::Size _gridSize;$/;"	member	line:23	class:TM2P5DCommonInfo
+_tileSizePx	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^	cocos2d::Size _tileSizePx;$/;"	member	line:24	class:TM2P5DCommonInfo
+_allLayers	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^	StrVector _allLayers;$/;"	member	line:25	class:TM2P5DCommonInfo
+_unifiledLayerHeads	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^	ItrVector _unifiledLayerHeads;$/;"	member	line:26	class:TM2P5DCommonInfo
+_tileSheetNode	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^	std::unordered_map<std::string,int> _tileSheetNode;$/;"	member	line:27	class:TM2P5DCommonInfo
+_directory	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^	std::string _directory;$/;"	member	line:28	class:TM2P5DCommonInfo
+_isSuccessedInit	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^	bool _isSuccessedInit;$/;"	member	line:29	class:TM2P5DCommonInfo
 MAX_DIRECTORY_NAME_LEN	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^#define MAX_DIRECTORY_NAME_LEN /;"	macro	line:6	file:
-_sharedInstance	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^static TM2P5DCommonInfo* _sharedInstance = nullptr;$/;"	variable	line:11	file:
-TM2P5DCommonInfo	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^TM2P5DCommonInfo::TM2P5DCommonInfo()$/;"	function	line:17	class:TM2P5DCommonInfo	signature:()
-~TM2P5DCommonInfo	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^TM2P5DCommonInfo::~TM2P5DCommonInfo()$/;"	function	line:26	class:TM2P5DCommonInfo	signature:()
-parseInfoFile	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^bool TM2P5DCommonInfo::parseInfoFile(std::string file)$/;"	function	line:35	class:TM2P5DCommonInfo	signature:(std::string file)
-getInstance	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^TM2P5DCommonInfo* TM2P5DCommonInfo::getInstance()$/;"	function	line:105	class:TM2P5DCommonInfo	signature:()
-initWithFile	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^bool TM2P5DCommonInfo::initWithFile(std::string file)$/;"	function	line:116	class:TM2P5DCommonInfo	signature:(std::string file)
+MAX_FILE_NAME_LEN	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^#define MAX_FILE_NAME_LEN /;"	macro	line:7	file:
+_sharedInstance	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^static TM2P5DCommonInfo* _sharedInstance = nullptr;$/;"	variable	line:12	file:
+TM2P5DCommonInfo	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^TM2P5DCommonInfo::TM2P5DCommonInfo()$/;"	function	line:18	class:TM2P5DCommonInfo	signature:()
+~TM2P5DCommonInfo	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^TM2P5DCommonInfo::~TM2P5DCommonInfo()$/;"	function	line:27	class:TM2P5DCommonInfo	signature:()
+parseInfoFile	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^bool TM2P5DCommonInfo::parseInfoFile(std::string file)$/;"	function	line:36	class:TM2P5DCommonInfo	signature:(std::string file)
+getInstance	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^TM2P5DCommonInfo* TM2P5DCommonInfo::getInstance()$/;"	function	line:196	class:TM2P5DCommonInfo	signature:()
+initWithFile	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^bool TM2P5DCommonInfo::initWithFile(std::string file)$/;"	function	line:207	class:TM2P5DCommonInfo	signature:(std::string file)

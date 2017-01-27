@@ -1,10 +1,12 @@
-#ifndef TM2P5D_COMMON_INFO_H
+#ifndef isSuccessedInitH
 #define TM2P5D_COMMON_INFO_H
 
 #include "cocos2d.h"
 #include <string>
+#include <vector>
 
-typedef std::string* StrArray;
+typedef std::vector<std::string> StrVector;
+typedef std::vector<StrVector::iterator> ItrVector;
 
 /**
  * This class is Singleton class.
@@ -20,11 +22,11 @@ private:
 	int _numOfAllLayers;
 	cocos2d::Size _gridSize;
 	cocos2d::Size _tileSizePx;
-	StrArray _allLayers;
-	StrArray* _unifiledLayerHeads;
+	StrVector _allLayers;
+	ItrVector _unifiledLayerHeads;
 	std::unordered_map<std::string,int> _tileSheetNode;
 	std::string _directory;
-	bool _isLoadingFileFailed;
+	bool _isSuccessedInit;
 
 	/**
 	 * Parse map-info file. If any error occer,

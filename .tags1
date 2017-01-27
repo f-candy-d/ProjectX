@@ -5,9 +5,10 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
 MAX_DIRECTORY_NAME_LEN	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^#define MAX_DIRECTORY_NAME_LEN /;"	macro	line:6	file:
-_sharedInstance	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^static TM2P5DCommonInfo* _sharedInstance = nullptr;$/;"	variable	line:11	file:
-TM2P5DCommonInfo	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^TM2P5DCommonInfo::TM2P5DCommonInfo()$/;"	function	line:17	class:TM2P5DCommonInfo	signature:()
-~TM2P5DCommonInfo	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^TM2P5DCommonInfo::~TM2P5DCommonInfo()$/;"	function	line:26	class:TM2P5DCommonInfo	signature:()
-parseInfoFile	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^bool TM2P5DCommonInfo::parseInfoFile(std::string file)$/;"	function	line:35	class:TM2P5DCommonInfo	signature:(std::string file)
-getInstance	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^TM2P5DCommonInfo* TM2P5DCommonInfo::getInstance()$/;"	function	line:105	class:TM2P5DCommonInfo	signature:()
-initWithFile	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^bool TM2P5DCommonInfo::initWithFile(std::string file)$/;"	function	line:116	class:TM2P5DCommonInfo	signature:(std::string file)
+MAX_FILE_NAME_LEN	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^#define MAX_FILE_NAME_LEN /;"	macro	line:7	file:
+_sharedInstance	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^static TM2P5DCommonInfo* _sharedInstance = nullptr;$/;"	variable	line:12	file:
+TM2P5DCommonInfo	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^TM2P5DCommonInfo::TM2P5DCommonInfo()$/;"	function	line:18	class:TM2P5DCommonInfo	signature:()
+~TM2P5DCommonInfo	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^TM2P5DCommonInfo::~TM2P5DCommonInfo()$/;"	function	line:27	class:TM2P5DCommonInfo	signature:()
+parseInfoFile	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^bool TM2P5DCommonInfo::parseInfoFile(std::string file)$/;"	function	line:36	class:TM2P5DCommonInfo	signature:(std::string file)
+getInstance	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^TM2P5DCommonInfo* TM2P5DCommonInfo::getInstance()$/;"	function	line:196	class:TM2P5DCommonInfo	signature:()
+initWithFile	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^bool TM2P5DCommonInfo::initWithFile(std::string file)$/;"	function	line:207	class:TM2P5DCommonInfo	signature:(std::string file)

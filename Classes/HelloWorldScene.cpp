@@ -24,7 +24,7 @@ Scene* HelloWorld::createScene()
     tag = 1 << 1;
     unified_lahyer->addBitLayer("layerA.dat",tag);
     auto map = TiledMap2P5D::create("");
-    auto shared = TM2P5DCommonInfo::getInstance();
+    auto shared = TM2P5DCommonInfo::getInstance()->initWithFile("Resources/tm2p5d/map_info.dat");
 
     // return the scene
     return scene;
