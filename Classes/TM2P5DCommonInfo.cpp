@@ -33,6 +33,31 @@ TM2P5DCommonInfo::~TM2P5DCommonInfo()
  * Private functions
  */
 
+void TM2P5DCommonInfo::logForDebug()
+{
+	log("numOfUnifiedLayers = %d",_numOfUnifiedLayers);
+	log("numOfAllLayers = %d",_numOfAllLayers);
+	log("gridSize W = %d H = %d",(int)_gridSize.width,(int)_gridSize.height);
+	log("tileSizePx W = %d H = %d",(int)_tileSizePx.width,(int)_tileSizePx.height);
+	log("directory = %s",_directory.c_str());
+	log("allLayers::");
+	for(auto itr = _allLayers.begin();itr != _allLayers.end();++itr)
+	{
+		log("	[%s]",itr->c_str());
+	}
+	log("unifiedLayersHeads::");
+	for(auto itr = _unifiledLayerHeads.begin();itr != _unifiledLayerHeads.end();++itr)
+	{
+		log("	[%s]",(*itr)->c_str());
+	}
+	log("tileSheetNode::");
+	for(auto itr = _tileSheetNode.begin();itr != _tileSheetNode.end();++itr)
+	{
+		log("key[%s] value[%u]",itr->first.c_str(),itr->second);
+	}
+	log("isSuccessedInit = %s",(_isSuccessedInit)?"true":"false");
+}
+
 bool TM2P5DCommonInfo::parseInfoFile(std::string file)
 {
 	std::ifstream i_file_stream(file,std::ios::in);
@@ -166,10 +191,10 @@ bool TM2P5DCommonInfo::parseInfoFile(std::string file)
 					// log("line is -> [%s]",line_buff.c_str());
 					if(line_buff.find("NUM_TILES") != (size_t)-1)
 					{
-						int nt;
+						unsigned int nt;
 						std::getline(i_file_stream,line_buff);
 						// log("line is -> [%s]",line_buff.c_str());
-						sscanf(line_buff.c_str(),"%d",&nt);
+						sscanf(line_buff.c_str(),"%u",&nt);
 						//Add to the map
 						_tileSheetNode[tmp] = nt;
 						// log("nt = %d",nt);
@@ -209,27 +234,38 @@ bool TM2P5DCommonInfo::initWithFile(std::string file)
 	if(!(_isSuccessedInit = parseInfoFile(file)))
 		return false;
 
-		log("numOfUnifiedLayers = %d",_numOfUnifiedLayers);
-		log("numOfAllLayers = %d",_numOfAllLayers);
-		log("gridSize W = %d H = %d",(int)_gridSize.width,(int)_gridSize.height);
-		log("tileSizePx W = %d H = %d",(int)_tileSizePx.width,(int)_tileSizePx.height);
-		log("directory = %s",_directory.c_str());
-		log("allLayers::");
-		for(auto itr = _allLayers.begin();itr != _allLayers.end();++itr)
-		{
-			log("	[%s]",itr->c_str());
-		}
-		log("unifiedLayersHeads::");
-		for(auto itr = _unifiledLayerHeads.begin();itr != _unifiledLayerHeads.end();++itr)
-		{
-			log("	[%s]",(*itr)->c_str());
-		}
-		log("tileSheetNode::");
-		for(auto itr = _tileSheetNode.begin();itr != _tileSheetNode.end();++itr)
-		{
-			log("key[%s] value[%d]",itr->first.c_str(),itr->second);
-		}
-		log("isSuccessedInit = %s",(_isSuccessedInit)?"true":"false");
+		//For debug
+		logForDebug();
 
 	return true;
+}
+
+StrVector TM2P5DCommonInfo::getBitLayerNamesInUnifiedLayer(int index)
+{
+	StrVector v;
+
+	if(index < _numOfUnifiedLayers)
+	{
+		for(auto itr = _unifiledLayerHeads[index];
+			(index == _numOfAllLayers - 1)
+			? (itr != _allLayers.end())
+			: (itr != _allLayers.end() && itr != _unifiledLayerHeads[index + 1]);
+			++itr)
+			{
+				v.push_back(*itr);
+			}
+	}
+
+	//Return v using move-semantics
+	return std::move(v);
+}
+
+const StrVector& TM2P5DCommonInfo::getAllBitLayerNames()
+{
+	return _allLayers;
+}
+
+unsigned int TM2P5DCommonInfo::getNumOfTilesForTileSheetName(std::string name)
+{
+	return _tileSheetNode[name];
 }

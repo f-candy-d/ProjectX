@@ -9,6 +9,10 @@ MAX_FILE_NAME_LEN	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonI
 _sharedInstance	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^static TM2P5DCommonInfo* _sharedInstance = nullptr;$/;"	variable	line:12	file:
 TM2P5DCommonInfo	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^TM2P5DCommonInfo::TM2P5DCommonInfo()$/;"	function	line:18	class:TM2P5DCommonInfo	signature:()
 ~TM2P5DCommonInfo	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^TM2P5DCommonInfo::~TM2P5DCommonInfo()$/;"	function	line:27	class:TM2P5DCommonInfo	signature:()
-parseInfoFile	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^bool TM2P5DCommonInfo::parseInfoFile(std::string file)$/;"	function	line:36	class:TM2P5DCommonInfo	signature:(std::string file)
-getInstance	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^TM2P5DCommonInfo* TM2P5DCommonInfo::getInstance()$/;"	function	line:196	class:TM2P5DCommonInfo	signature:()
-initWithFile	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^bool TM2P5DCommonInfo::initWithFile(std::string file)$/;"	function	line:207	class:TM2P5DCommonInfo	signature:(std::string file)
+logForDebug	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^void TM2P5DCommonInfo::logForDebug()$/;"	function	line:36	class:TM2P5DCommonInfo	signature:()
+parseInfoFile	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^bool TM2P5DCommonInfo::parseInfoFile(std::string file)$/;"	function	line:61	class:TM2P5DCommonInfo	signature:(std::string file)
+getInstance	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^TM2P5DCommonInfo* TM2P5DCommonInfo::getInstance()$/;"	function	line:221	class:TM2P5DCommonInfo	signature:()
+initWithFile	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^bool TM2P5DCommonInfo::initWithFile(std::string file)$/;"	function	line:232	class:TM2P5DCommonInfo	signature:(std::string file)
+getBitLayerNamesInUnifiedLayer	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^StrVector TM2P5DCommonInfo::getBitLayerNamesInUnifiedLayer(int index)$/;"	function	line:243	class:TM2P5DCommonInfo	signature:(int index)
+getAllBitLayerNames	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^const StrVector& TM2P5DCommonInfo::getAllBitLayerNames()$/;"	function	line:263	class:TM2P5DCommonInfo	signature:()
+getNumOfTilesForTileSheetName	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^unsigned int TM2P5DCommonInfo::getNumOfTilesForTileSheetName(std::string name)$/;"	function	line:268	class:TM2P5DCommonInfo	signature:(std::string name)

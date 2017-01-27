@@ -6039,20 +6039,18 @@ TM2P5D_COMMON_INFO_H	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DComm
 StrVector	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^typedef std::vector<std::string> StrVector;$/;"	typedef	line:8
 ItrVector	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^typedef std::vector<StrVector::iterator> ItrVector;$/;"	typedef	line:9
 TM2P5DCommonInfo	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^class TM2P5DCommonInfo : public cocos2d::Ref$/;"	class	line:14
-_numOfUnifiedLayers	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^	int _numOfUnifiedLayers;$/;"	member	line:21	class:TM2P5DCommonInfo
-_numOfAllLayers	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^	int _numOfAllLayers;$/;"	member	line:22	class:TM2P5DCommonInfo
-_gridSize	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^	cocos2d::Size _gridSize;$/;"	member	line:23	class:TM2P5DCommonInfo
-_tileSizePx	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^	cocos2d::Size _tileSizePx;$/;"	member	line:24	class:TM2P5DCommonInfo
-_allLayers	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^	StrVector _allLayers;$/;"	member	line:25	class:TM2P5DCommonInfo
-_unifiledLayerHeads	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^	ItrVector _unifiledLayerHeads;$/;"	member	line:26	class:TM2P5DCommonInfo
-_tileSheetNode	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^	std::unordered_map<std::string,int> _tileSheetNode;$/;"	member	line:27	class:TM2P5DCommonInfo
-_directory	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^	std::string _directory;$/;"	member	line:28	class:TM2P5DCommonInfo
-_isSuccessedInit	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^	bool _isSuccessedInit;$/;"	member	line:29	class:TM2P5DCommonInfo
+_allLayers	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^	StrVector _allLayers;$/;"	member	line:27	class:TM2P5DCommonInfo
+_unifiledLayerHeads	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^	ItrVector _unifiledLayerHeads;$/;"	member	line:28	class:TM2P5DCommonInfo
+_tileSheetNode	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^	std::unordered_map<std::string,unsigned int> _tileSheetNode;$/;"	member	line:29	class:TM2P5DCommonInfo
 MAX_DIRECTORY_NAME_LEN	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^#define MAX_DIRECTORY_NAME_LEN /;"	macro	line:6	file:
 MAX_FILE_NAME_LEN	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^#define MAX_FILE_NAME_LEN /;"	macro	line:7	file:
 _sharedInstance	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^static TM2P5DCommonInfo* _sharedInstance = nullptr;$/;"	variable	line:12	file:
 TM2P5DCommonInfo	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^TM2P5DCommonInfo::TM2P5DCommonInfo()$/;"	function	line:18	class:TM2P5DCommonInfo	signature:()
 ~TM2P5DCommonInfo	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^TM2P5DCommonInfo::~TM2P5DCommonInfo()$/;"	function	line:27	class:TM2P5DCommonInfo	signature:()
-parseInfoFile	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^bool TM2P5DCommonInfo::parseInfoFile(std::string file)$/;"	function	line:36	class:TM2P5DCommonInfo	signature:(std::string file)
-getInstance	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^TM2P5DCommonInfo* TM2P5DCommonInfo::getInstance()$/;"	function	line:196	class:TM2P5DCommonInfo	signature:()
-initWithFile	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^bool TM2P5DCommonInfo::initWithFile(std::string file)$/;"	function	line:207	class:TM2P5DCommonInfo	signature:(std::string file)
+logForDebug	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^void TM2P5DCommonInfo::logForDebug()$/;"	function	line:36	class:TM2P5DCommonInfo	signature:()
+parseInfoFile	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^bool TM2P5DCommonInfo::parseInfoFile(std::string file)$/;"	function	line:61	class:TM2P5DCommonInfo	signature:(std::string file)
+getInstance	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^TM2P5DCommonInfo* TM2P5DCommonInfo::getInstance()$/;"	function	line:221	class:TM2P5DCommonInfo	signature:()
+initWithFile	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^bool TM2P5DCommonInfo::initWithFile(std::string file)$/;"	function	line:232	class:TM2P5DCommonInfo	signature:(std::string file)
+getBitLayerNamesInUnifiedLayer	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^StrVector TM2P5DCommonInfo::getBitLayerNamesInUnifiedLayer(int index)$/;"	function	line:243	class:TM2P5DCommonInfo	signature:(int index)
+getAllBitLayerNames	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^const StrVector& TM2P5DCommonInfo::getAllBitLayerNames()$/;"	function	line:263	class:TM2P5DCommonInfo	signature:()
+getNumOfTilesForTileSheetName	/home/daichi/dev/cocos.projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^unsigned int TM2P5DCommonInfo::getNumOfTilesForTileSheetName(std::string name)$/;"	function	line:268	class:TM2P5DCommonInfo	signature:(std::string name)
