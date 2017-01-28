@@ -78,15 +78,15 @@ bool HelloWorld::init()
 
 
     //test
-    auto shared = TM2P5DCommonInfo::getInstance()->initWithFile("Resources/tm2p5d/map_info.dat");
-    auto unified_lahyer = UnifiedLayer::createWithLayerIndex(0);
-    int tag = 1 << 0;
-    unified_lahyer->addBitLayer("layerB.dat",tag);
-    tag = 1 << 1;
-    unified_lahyer->addBitLayer("layerA.dat",tag);
-    unified_lahyer->makeTileSpriets();
-    this->addChild(unified_lahyer);
-    auto map = TiledMap2P5D::create("");
+    auto map = TiledMap2P5D::create("Resources/tm2p5d/map_info.dat");
+    this->addChild(map);
+    // auto unified_lahyer = UnifiedLayer::createWithLayerIndex(0);
+    // int tag = 1 << 0;
+    // unified_lahyer->addBitLayer("testLayer.dat",tag);
+    // tag = 1 << 1;
+    // unified_lahyer->addBitLayer("testLayer2.dat",tag);
+    // unified_lahyer->makeTileSpriets();
+    // this->addChild(unified_lahyer);
 
     return true;
 }

@@ -35,8 +35,8 @@ TM2P5DCommonInfo::~TM2P5DCommonInfo()
 
 void TM2P5DCommonInfo::logForDebug()
 {
-	log("numOfUnifiedLayers = %d",_numOfUnifiedLayers);
-	log("numOfAllLayers = %d",_numOfAllLayers);
+	log("numOfUnifiedLayers = %zu",_numOfUnifiedLayers);
+	log("numOfAllLayers = %zu",_numOfAllLayers);
 	log("gridSize W = %d H = %d",(int)_gridSize.width,(int)_gridSize.height);
 	log("tileSizePx W = %d H = %d",(int)_tileSizePx.width,(int)_tileSizePx.height);
 	log("directory = %s",_directory.c_str());
@@ -53,7 +53,7 @@ void TM2P5DCommonInfo::logForDebug()
 	log("tileSheetNode::");
 	for(auto itr = _tileSheetNode.begin();itr != _tileSheetNode.end();++itr)
 	{
-		log("key[%s] value[%u]",itr->first.c_str(),itr->second);
+		log("key[%s] value[%zu]",itr->first.c_str(),itr->second);
 	}
 	log("isSuccessedInit = %s",(_isSuccessedInit)?"true":"false");
 }
@@ -83,7 +83,7 @@ bool TM2P5DCommonInfo::parseInfoFile(std::string file)
 			//The number of unified layers.
 			std::getline(i_file_stream,line_buff);
 			// log("line is -> [%s]",line_buff.c_str());
-			sscanf(line_buff.c_str(),"%d",&_numOfUnifiedLayers);
+			sscanf(line_buff.c_str(),"%zu",&_numOfUnifiedLayers);
 			//set capacity
 				// _unifiledLayerHeads.reserve(3);
 				// log("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE[%d]",_numOfUnifiedLayers);
@@ -93,7 +93,7 @@ bool TM2P5DCommonInfo::parseInfoFile(std::string file)
 			//The number of all bit layers.
 			std::getline(i_file_stream,line_buff);
 			// log("line is -> [%s]",line_buff.c_str());
-			sscanf(line_buff.c_str(),"%d",&_numOfAllLayers);
+			sscanf(line_buff.c_str(),"%zu",&_numOfAllLayers);
 			//set capacity to avoid be killed iterator when call vector.pushBack().
 			if(_numOfAllLayers > 0)
 				_allLayers.reserve(_numOfAllLayers);
@@ -191,10 +191,10 @@ bool TM2P5DCommonInfo::parseInfoFile(std::string file)
 					// log("line is -> [%s]",line_buff.c_str());
 					if(line_buff.find("NUM_TILES") != (size_t)-1)
 					{
-						unsigned int nt;
+						size_t nt;
 						std::getline(i_file_stream,line_buff);
 						// log("line is -> [%s]",line_buff.c_str());
-						sscanf(line_buff.c_str(),"%u",&nt);
+						sscanf(line_buff.c_str(),"%zu",&nt);
 						//Add to the map
 						_tileSheetNode[tmp] = nt;
 						// log("nt = %d",nt);
@@ -240,7 +240,7 @@ bool TM2P5DCommonInfo::initWithFile(std::string file)
 	return true;
 }
 
-StrVector TM2P5DCommonInfo::getBitLayerNamesInUnifiedLayer(int index)
+StrVector TM2P5DCommonInfo::getBitLayerNamesInUnifiedLayer(size_t index)
 {
 	StrVector v;
 

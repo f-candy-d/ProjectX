@@ -10,6 +10,7 @@ USING_NS_CC;
 
 UnifiedLayer::UnifiedLayer()
 :_tiles(nullptr)
+,_atIndex(0)
 {}
 
 UnifiedLayer::~UnifiedLayer()
@@ -18,7 +19,7 @@ UnifiedLayer::~UnifiedLayer()
 	delete[] _tiles;
 }
 
-bool UnifiedLayer::initWithLayerIndex(int index)
+bool UnifiedLayer::initWithLayerIndex(size_t index)
 {
 	if(!Node::init())
 	{
@@ -30,6 +31,7 @@ bool UnifiedLayer::initWithLayerIndex(int index)
 	{
 		auto map_size = cmn_info->getGridSize();
 		_tiles = new int[(unsigned int)(map_size.width * map_size.height)]{0};
+		_atIndex = index;
 
 		return true;
 	}
@@ -50,7 +52,7 @@ Vec2 UnifiedLayer::convertGridPosToLocalPos(unsigned int x,unsigned int y,const 
  * public functions
  */
 
-UnifiedLayer* UnifiedLayer::createWithLayerIndex(int index)
+UnifiedLayer* UnifiedLayer::createWithLayerIndex(size_t index)
 {
 	UnifiedLayer* ret = new UnifiedLayer();
 	if(ret->initWithLayerIndex(index))
@@ -103,6 +105,8 @@ void UnifiedLayer::makeTileSpriets()
 	float p,q;
 	BitLayer::TileInfo tile_info;
 
+	int c = 0;
+
 	for(unsigned int x = 0; x < map_size.width; ++x)
 	{
 		for(unsigned int y = 0;y < map_size.height; ++y,++pt)
@@ -125,10 +129,13 @@ void UnifiedLayer::makeTileSpriets()
 						TM2P5DCommonInfo::getInstance()->getDirectory() + bit_layer->getTileAtlasFile(),texture_rect);
 					tile->setPosition(convertGridPosToLocalPos(x,y,tile_size));
 					bit_layer->getSpriteBatchNode()->addChild(tile);
+					c++;
 
 					break;
 				}
 			}
 		}
 	}
+
+	log("<<<<<<<<<<<<<<Made %d tiles>>>>>>>>>>>>>",c);
 }

@@ -2,6 +2,7 @@
 #define TILED_MAP_2P5D_H
 
 #include "../cocos2d/cocos/cocos2d.h"
+#include "UnifiedLayer.h"
 #include <string>
 
 class TiledMap2P5D : public cocos2d::Node
@@ -17,6 +18,14 @@ protected:
 	bool initWithFile(std::string file);
 
 private:
+	cocos2d::Vector<UnifiedLayer*> _layers;
+
+	/**
+	 * [addUnifiedLayer description]
+	 * @method addUnifiedLayer
+	 * @param  index           [description]
+	 */
+	void addUnifiedLayer(size_t index);
 
 public:
 	/**

@@ -18,15 +18,15 @@ protected:
 	virtual ~TM2P5DCommonInfo();
 
 private:
-	CC_SYNTHESIZE_READONLY(int,_numOfUnifiedLayers,NumOfUnifiedLayers);
-	CC_SYNTHESIZE_READONLY(int,_numOfAllLayers,NumOfAllLayers);
+	CC_SYNTHESIZE_READONLY(size_t,_numOfUnifiedLayers,NumOfUnifiedLayers);
+	CC_SYNTHESIZE_READONLY(size_t,_numOfAllLayers,NumOfAllLayers);
 	CC_SYNTHESIZE_READONLY(cocos2d::Size,_gridSize,GridSize);
 	CC_SYNTHESIZE_READONLY(cocos2d::Size,_tileSizePx,TileSizePx);
 	CC_SYNTHESIZE_READONLY(std::string,_directory,Directory);
 	CC_SYNTHESIZE_READONLY(bool,_isSuccessedInit,IsSuccessedInit);
 	StrVector _allLayers;
 	ItrVector _unifiledLayerHeads;
-	std::unordered_map<std::string,unsigned int> _tileSheetNode;
+	std::unordered_map<std::string,size_t> _tileSheetNode;
 
 	/**
 	 * Using for debug...
@@ -62,7 +62,7 @@ public:
 	 * @param  index [Index of specific UnifiedLayer is.]
 	 * @return       [The names of BitLayers.]
 	 */
-	StrVector getBitLayerNamesInUnifiedLayer(int index);
+	StrVector getBitLayerNamesInUnifiedLayer(size_t index);
 
 	/**
 	 * Return the names of all bitLayers in the TiledMap2P5D.

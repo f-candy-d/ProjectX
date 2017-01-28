@@ -15,11 +15,12 @@ protected:
 	 * @param  index [description]
 	 * @return       [description]
 	 */
-	bool initWithLayerIndex(int index);
+	bool initWithLayerIndex(size_t index);
 
 private:
 	cocos2d::Vector<BitLayer*> _bitLayers;
 	int* _tiles;
+	size_t _atIndex;
 
 	/**
 	 * [convertGridPosToLocalPos description]
@@ -37,7 +38,7 @@ public:
 	 * @param  index [description]
 	 * @return       [description]
 	 */
-	static UnifiedLayer* createWithLayerIndex(int index);
+	static UnifiedLayer* createWithLayerIndex(size_t index);
 
 	/**
 	 * [addBitLayer description]
