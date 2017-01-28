@@ -1,7 +1,7 @@
 #ifndef isSuccessedInitH
 #define TM2P5D_COMMON_INFO_H
 
-#include "cocos2d.h"
+#include "../cocos2d/cocos/cocos2d.h"
 #include <string>
 #include <vector>
 

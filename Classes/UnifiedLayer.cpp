@@ -1,4 +1,5 @@
 #include "UnifiedLayer.h"
+#include "TM2P5DCommonInfo.h"
 
 USING_NS_CC;
 
@@ -7,9 +8,7 @@ USING_NS_CC;
  */
 
 UnifiedLayer::UnifiedLayer()
-:_mapSize(0,0)
-,_directory("")
-,_tiles(nullptr)
+:_tiles(nullptr)
 {}
 
 UnifiedLayer::~UnifiedLayer()
@@ -18,18 +17,23 @@ UnifiedLayer::~UnifiedLayer()
 	delete[] _tiles;
 }
 
-bool UnifiedLayer::initWithMapInfo(std::string directory,cocos2d::Size map_size)
+bool UnifiedLayer::initWithLayerIndex(int index)
 {
 	if(!Node::init())
 	{
 		return false;
 	}
 
-	_mapSize = Size(map_size);
-	_directory = std::string(directory);
-	_tiles = new int[(unsigned int)(map_size.width * map_size.height)]{0};
+	auto cmn_info = TM2P5DCommonInfo::getInstance();
+	if(cmn_info->getIsSuccessedInit())
+	{
+		auto map_size = cmn_info->getGridSize();
+		_tiles = new int[(unsigned int)(map_size.width * map_size.height)]{0};
 
-	return true;
+		return true;
+	}
+
+	return false;
 }
 
 /**
@@ -40,10 +44,10 @@ bool UnifiedLayer::initWithMapInfo(std::string directory,cocos2d::Size map_size)
  * public functions
  */
 
-UnifiedLayer* UnifiedLayer::createWithMapInfo(std::string directory,cocos2d::Size map_size)
+UnifiedLayer* UnifiedLayer::createWithLayerIndex(int index)
 {
 	UnifiedLayer* ret = new UnifiedLayer();
-	if(ret->initWithMapInfo(directory, map_size))
+	if(ret->initWithLayerIndex(index))
 	{
 		ret->autorelease();
 		return ret;
@@ -55,7 +59,7 @@ UnifiedLayer* UnifiedLayer::createWithMapInfo(std::string directory,cocos2d::Siz
 
 void UnifiedLayer::addBitLayer(std::string file,int flag)
 {
-	auto bit_layer = BitLayer::createWithLayerInfoFile(_directory + file);
+	auto bit_layer = BitLayer::createWithLayerInfoFile(TM2P5DCommonInfo::getInstance()->getDirectory() + "/" + file);
 	if(bit_layer != nullptr)
 	{
 		bit_layer->setBitFlag(flag);
@@ -65,9 +69,10 @@ void UnifiedLayer::addBitLayer(std::string file,int flag)
 			this->addChild(bit_layer->getSpriteBatchNode());
 
 		int* p = _tiles;
-		for(unsigned int x = 0; x < _mapSize.width; ++x)
+		auto map_size = TM2P5DCommonInfo::getInstance()->getGridSize();
+		for(unsigned int x = 0; x < map_size.width; ++x)
 		{
-			for(unsigned int y = 0; y < _mapSize.height; ++y,++p)
+			for(unsigned int y = 0; y < map_size.height; ++y,++p)
 			{
 				if(bit_layer->isOwnAnyTileAt(x,y))
 					*p = *p | flag;
@@ -81,10 +86,11 @@ void UnifiedLayer::makeTileSpriets()
 	int* p = _tiles;
 	Size texture_size;
 	Sprite* tile;
+	auto map_size = TM2P5DCommonInfo::getInstance()->getGridSize();
 
-	for(unsigned int x = 0; x < _mapSize.width; ++x)
+	for(unsigned int x = 0; x < map_size.width; ++x)
 	{
-		for(unsigned int y = 0;y < _mapSize.height; ++y,++p)
+		for(unsigned int y = 0;y < map_size.height; ++y,++p)
 		{
 			for(auto bit_layer : _bitLayers)
 			{

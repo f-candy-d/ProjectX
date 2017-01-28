@@ -18,7 +18,7 @@ Scene* HelloWorld::createScene()
     scene->addChild(layer);
 
     //test
-    auto unified_lahyer = UnifiedLayer::createWithMapInfo("Resources/tm2p5d/",Size(9,6));
+    auto unified_lahyer = UnifiedLayer::createWithLayerIndex(0);
     int tag = 1 << 0;
     unified_lahyer->addBitLayer("layerB.dat",tag);
     tag = 1 << 1;

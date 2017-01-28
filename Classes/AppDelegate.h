@@ -1,7 +1,7 @@
 #ifndef  _APP_DELEGATE_H_
 #define  _APP_DELEGATE_H_
 
-#include "cocos2d.h"
+#include "../cocos2d/cocos/cocos2d.h"
 
 /**
 @brief    The cocos2d Application.
@@ -37,4 +37,3 @@ public:
 };
 
 #endif // _APP_DELEGATE_H_
-

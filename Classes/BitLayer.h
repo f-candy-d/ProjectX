@@ -1,7 +1,7 @@
 #ifndef BIT_LAYER_H
 #define BIT_LAYER_H
 
-#include "cocos2d.h"
+#include "../cocos2d/cocos/cocos2d.h"
 #include <string>
 #include <unordered_map>
 

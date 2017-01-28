@@ -1,7 +1,7 @@
 #ifndef TILED_MAP_2P5D_H
 #define TILED_MAP_2P5D_H
 
-#include "cocos2d.h"
+#include "../cocos2d/cocos/cocos2d.h"
 #include <string>
 
 class TiledMap2P5D : public cocos2d::Node
