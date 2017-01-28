@@ -1,4 +1,4 @@
-#ifndef isSuccessedInitH
+#ifndef TM2P5D_COMMON_INFO_H
 #define TM2P5D_COMMON_INFO_H
 
 #include "../cocos2d/cocos/cocos2d.h"

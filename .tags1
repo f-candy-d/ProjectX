@@ -4,9 +4,6 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-UnifiedLayer	/home/daichi/dev/cocos.projects/ProjectX/Classes/UnifiedLayer.cpp	/^UnifiedLayer::UnifiedLayer()$/;"	function	line:10	class:UnifiedLayer	signature:()
-~UnifiedLayer	/home/daichi/dev/cocos.projects/ProjectX/Classes/UnifiedLayer.cpp	/^UnifiedLayer::~UnifiedLayer()$/;"	function	line:14	class:UnifiedLayer	signature:()
-initWithLayerIndex	/home/daichi/dev/cocos.projects/ProjectX/Classes/UnifiedLayer.cpp	/^bool UnifiedLayer::initWithLayerIndex(int index)$/;"	function	line:20	class:UnifiedLayer	signature:(int index)
-createWithLayerIndex	/home/daichi/dev/cocos.projects/ProjectX/Classes/UnifiedLayer.cpp	/^UnifiedLayer* UnifiedLayer::createWithLayerIndex(int index)$/;"	function	line:40	class:UnifiedLayer	signature:(int index)
-addBitLayer	/home/daichi/dev/cocos.projects/ProjectX/Classes/UnifiedLayer.cpp	/^void UnifiedLayer::addBitLayer(std::string file,int flag)$/;"	function	line:53	class:UnifiedLayer	signature:(std::string file,int flag)
-makeTileSpriets	/home/daichi/dev/cocos.projects/ProjectX/Classes/UnifiedLayer.cpp	/^void UnifiedLayer::makeTileSpriets()$/;"	function	line:76	class:UnifiedLayer	signature:()
+createScene	/home/daichi/dev/cocos-projects/ProjectX/Classes/HelloWorldScene.cpp	/^Scene* HelloWorld::createScene()$/;"	function	line:9	class:HelloWorld	signature:()
+init	/home/daichi/dev/cocos-projects/ProjectX/Classes/HelloWorldScene.cpp	/^bool HelloWorld::init()$/;"	function	line:25	class:HelloWorld	signature:()
+menuCloseCallback	/home/daichi/dev/cocos-projects/ProjectX/Classes/HelloWorldScene.cpp	/^void HelloWorld::menuCloseCallback(Ref* pSender)$/;"	function	line:95	class:HelloWorld	signature:(Ref* pSender)

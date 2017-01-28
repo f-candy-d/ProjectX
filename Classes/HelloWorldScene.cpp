@@ -17,15 +17,6 @@ Scene* HelloWorld::createScene()
     // add layer as a child to scene
     scene->addChild(layer);
 
-    //test
-    auto unified_lahyer = UnifiedLayer::createWithLayerIndex(0);
-    int tag = 1 << 0;
-    unified_lahyer->addBitLayer("layerB.dat",tag);
-    tag = 1 << 1;
-    unified_lahyer->addBitLayer("layerA.dat",tag);
-    auto map = TiledMap2P5D::create("");
-    auto shared = TM2P5DCommonInfo::getInstance()->initWithFile("Resources/tm2p5d/map_info.dat");
-
     // return the scene
     return scene;
 }
@@ -76,14 +67,26 @@ bool HelloWorld::init()
     // add the label as a child to this layer
     this->addChild(label, 1);
 
-    // add "HelloWorld" splash screen"
-    auto sprite = Sprite::create("HelloWorld.png");
+    // // add "HelloWorld" splash screen"
+    // auto sprite = Sprite::create("HelloWorld.png");
+    //
+    // // position the sprite on the center of the screen
+    // sprite->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
+    //
+    // // add the sprite as a child to this layer
+    // this->addChild(sprite, 0);
 
-    // position the sprite on the center of the screen
-    sprite->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
 
-    // add the sprite as a child to this layer
-    this->addChild(sprite, 0);
+    //test
+    auto shared = TM2P5DCommonInfo::getInstance()->initWithFile("Resources/tm2p5d/map_info.dat");
+    auto unified_lahyer = UnifiedLayer::createWithLayerIndex(0);
+    int tag = 1 << 0;
+    unified_lahyer->addBitLayer("layerB.dat",tag);
+    tag = 1 << 1;
+    unified_lahyer->addBitLayer("layerA.dat",tag);
+    unified_lahyer->makeTileSpriets();
+    this->addChild(unified_lahyer);
+    auto map = TiledMap2P5D::create("");
 
     return true;
 }

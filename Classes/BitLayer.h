@@ -5,14 +5,15 @@
 #include <string>
 #include <unordered_map>
 
-typedef struct {
-	unsigned int x;
-	unsigned int y;
-	int tileType;
-} TileInfo;
-
 class BitLayer : public cocos2d::Ref
 {
+public:
+	typedef struct {
+		unsigned int x;
+		unsigned int y;
+		int tileType;
+	} TileInfo;
+
 protected:
 	BitLayer();
 	virtual ~BitLayer();
@@ -20,11 +21,11 @@ protected:
 
 private:
 	std::unordered_map<unsigned int,TileInfo> _tileInfoHashMap;
-	std::string _tileAtlasFile;
 	bool _isVisible;
 	bool _isFailedLoadingFile;
 	cocos2d::Size _tileSize;
 	CC_SYNTHESIZE(int,_bitFlag,BitFlag);
+	CC_SYNTHESIZE_READONLY(std::string,_tileAtlasFile,TileAtlasFile);
 	CC_SYNTHESIZE_RETAIN(cocos2d::SpriteBatchNode*,_spriteBatchNode,SpriteBatchNode);
 
 	/**

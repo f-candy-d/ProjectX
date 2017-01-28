@@ -21,6 +21,16 @@ private:
 	cocos2d::Vector<BitLayer*> _bitLayers;
 	int* _tiles;
 
+	/**
+	 * [convertGridPosToLocalPos description]
+	 * @method convertGridPosToLocalPos
+	 * @param  x                        [description]
+	 * @param  y                        [description]
+	 * @param  tileSize                     [description]
+	 * @return                          [description]
+	 */
+	cocos2d::Vec2 convertGridPosToLocalPos(unsigned int x,unsigned int y,const cocos2d::Size& tileSize);
+
 public:
 	/**
 	 * [createWithLayerIndex description]
