@@ -77,6 +77,11 @@ bool HelloWorld::init()
     // this->addChild(sprite, 0);
 
 
+    /**
+     * test codes...
+     */
+
+
     //test
     auto map = TiledMap2P5D::create("Resources/tm2p5d/map_info.dat");
     this->addChild(map);
@@ -87,6 +92,15 @@ bool HelloWorld::init()
     // unified_lahyer->addBitLayer("testLayer2.dat",tag);
     // unified_lahyer->makeTileSpriets();
     // this->addChild(unified_lahyer);
+
+    auto listener = EventListenerTouchOneByOne::create();
+    listener->onTouchBegan = [map](Touch* touch,Event* event) {
+        auto v = map->getPosition();
+        log("position->(%f,%f)",v.x,v.y);
+        return true;
+    };
+    listener->onTouchMoved = map->getLambdaOnTouchMoved();
+    Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener,this);
 
     return true;
 }

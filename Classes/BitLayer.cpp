@@ -33,18 +33,18 @@ bool BitLayer::initWithLayerInfoFile(std::string file)
 		return false;
 	}
 
-	TileInfo info;
-	int c = 0;
-	for(auto itr = _tileInfoHashMap.begin(); itr != _tileInfoHashMap.end(); ++itr)
-	{
-		info = itr->second;
-		log("[TILE-INFO] :: X=%d	Y=%d	TILE_TYPE=%d",info.x,info.y,info.tileType);
-		c++;
-	}
-	log("!--%d tiles--!",c);
-	log("[IS-VISIBLE] :: %s",(_isVisible)?"true":"false");
-	log("[TILE-ATLAS-FILE] :: %s",_tileAtlasFile.c_str());
-	log("[TILE-SIZE] :: W=%d	H=%d",(int)_tileSize.width,(int)_tileSize.height);
+	// TileInfo info;
+	// int c = 0;
+	// for(auto itr = _tileInfoHashMap.begin(); itr != _tileInfoHashMap.end(); ++itr)
+	// {
+	// 	info = itr->second;
+	// 	log("[TILE-INFO] :: X=%d	Y=%d	TILE_TYPE=%d",info.x,info.y,info.tileType);
+	// 	c++;
+	// }
+	// log("!--%d tiles--!",c);
+	// log("[IS-VISIBLE] :: %s",(_isVisible)?"true":"false");
+	// log("[TILE-ATLAS-FILE] :: %s",_tileAtlasFile.c_str());
+	// log("[TILE-SIZE] :: W=%d	H=%d",(int)_tileSize.width,(int)_tileSize.height);
 
 	//Own SpriteBatchNode
 	makeOwnSpriteBatchNode();

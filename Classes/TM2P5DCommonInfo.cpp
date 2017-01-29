@@ -35,27 +35,27 @@ TM2P5DCommonInfo::~TM2P5DCommonInfo()
 
 void TM2P5DCommonInfo::logForDebug()
 {
-	log("numOfUnifiedLayers = %zu",_numOfUnifiedLayers);
-	log("numOfAllLayers = %zu",_numOfAllLayers);
-	log("gridSize W = %d H = %d",(int)_gridSize.width,(int)_gridSize.height);
-	log("tileSizePx W = %d H = %d",(int)_tileSizePx.width,(int)_tileSizePx.height);
-	log("directory = %s",_directory.c_str());
-	log("allLayers::");
-	for(auto itr = _allLayers.begin();itr != _allLayers.end();++itr)
-	{
-		log("	[%s]",itr->c_str());
-	}
-	log("unifiedLayersHeads::");
-	for(auto itr = _unifiledLayerHeads.begin();itr != _unifiledLayerHeads.end();++itr)
-	{
-		log("	[%s]",(*itr)->c_str());
-	}
-	log("tileSheetNode::");
-	for(auto itr = _tileSheetNode.begin();itr != _tileSheetNode.end();++itr)
-	{
-		log("key[%s] value[%zu]",itr->first.c_str(),itr->second);
-	}
-	log("isSuccessedInit = %s",(_isSuccessedInit)?"true":"false");
+	// log("numOfUnifiedLayers = %zu",_numOfUnifiedLayers);
+	// log("numOfAllLayers = %zu",_numOfAllLayers);
+	// log("gridSize W = %d H = %d",(int)_gridSize.width,(int)_gridSize.height);
+	// log("tileSizePx W = %d H = %d",(int)_tileSizePx.width,(int)_tileSizePx.height);
+	// log("directory = %s",_directory.c_str());
+	// log("allLayers::");
+	// for(auto itr = _allLayers.begin();itr != _allLayers.end();++itr)
+	// {
+	// 	log("	[%s]",itr->c_str());
+	// }
+	// log("unifiedLayersHeads::");
+	// for(auto itr = _unifiledLayerHeads.begin();itr != _unifiledLayerHeads.end();++itr)
+	// {
+	// 	log("	[%s]",(*itr)->c_str());
+	// }
+	// log("tileSheetNode::");
+	// for(auto itr = _tileSheetNode.begin();itr != _tileSheetNode.end();++itr)
+	// {
+	// 	log("key[%s] value[%zu]",itr->first.c_str(),itr->second);
+	// }
+	// log("isSuccessedInit = %s",(_isSuccessedInit)?"true":"false");
 }
 
 bool TM2P5DCommonInfo::parseInfoFile(std::string file)

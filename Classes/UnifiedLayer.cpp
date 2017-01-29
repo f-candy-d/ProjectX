@@ -95,21 +95,22 @@ void UnifiedLayer::addBitLayer(std::string file,int flag)
 	}
 }
 
-void UnifiedLayer::makeTileSpriets()
+void UnifiedLayer::makeTileSpriets(GridRect makeGr)
 {
-	int* pt = _tiles;
+	auto tile_size = TM2P5DCommonInfo::getInstance()->getTileSizePx();
+	auto grid_size = TM2P5DCommonInfo::getInstance()->getGridSize();
+	int* pt = static_cast<int>(makeGr.x * grid_size.height + makeGr.y) + _tiles;
+	int diff = static_cast<int>(grid_size.height) - makeGr.height;
 	int nw;
 	Size texture_size;
-	auto map_size = TM2P5DCommonInfo::getInstance()->getGridSize();
-	auto tile_size = TM2P5DCommonInfo::getInstance()->getTileSizePx();
 	float p,q;
 	BitLayer::TileInfo tile_info;
 
 	int c = 0;
 
-	for(unsigned int x = 0; x < map_size.width; ++x)
+	for(unsigned int x = makeGr.x; x < makeGr.width; ++x)
 	{
-		for(unsigned int y = 0;y < map_size.height; ++y,++pt)
+		for(unsigned int y = makeGr.y; y < makeGr.height; ++y,++pt)
 		{
 			for(auto bit_layer : _bitLayers)
 			{
@@ -135,7 +136,8 @@ void UnifiedLayer::makeTileSpriets()
 				}
 			}
 		}
+		pt += diff;
 	}
 
-	log("<<<<<<<<<<<<<<Made %d tiles>>>>>>>>>>>>>",c);
+	log("<<<<<<<<<<<<<<Made %d tiles>>>>>>>>>>>>>makeGr(%zu)",c,makeGr.width*makeGr.height);
 }

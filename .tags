@@ -6076,30 +6076,6 @@ addBitLayer	/home/daichi/dev/cocos.projects/ProjectX/Classes/UnifiedLayer.cpp	/^
 makeTileSpriets	/home/daichi/dev/cocos.projects/ProjectX/Classes/UnifiedLayer.cpp	/^void UnifiedLayer::makeTileSpriets()$/;"	function	line:76	class:UnifiedLayer	signature:()
 Constant	/home/daichi/dev/cocos-projects/ProjectX/Classes/Constant.h	/^namespace Constant {$/;"	namespace	line:1
 RESOURCES_DIRECTORY	/home/daichi/dev/cocos-projects/ProjectX/Classes/Constant.h	/^	static const std::string RESOURCES_DIRECTORY = "Resources\/";$/;"	member	line:4	namespace:Constant
-BitLayer	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.cpp	/^BitLayer::BitLayer()$/;"	function	line:11	class:BitLayer	signature:()
-~BitLayer	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.cpp	/^BitLayer::~BitLayer()$/;"	function	line:20	class:BitLayer	signature:()
-initWithLayerInfoFile	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.cpp	/^bool BitLayer::initWithLayerInfoFile(std::string file)$/;"	function	line:26	class:BitLayer	signature:(std::string file)
-parseLayerInfoFile	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.cpp	/^bool BitLayer::parseLayerInfoFile(std::string file)$/;"	function	line:59	class:BitLayer	signature:(std::string file)
-countDigitBinary	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.cpp	/^int BitLayer::countDigitBinary(unsigned int n)$/;"	function	line:166	class:BitLayer	signature:(unsigned int n)
-makeHashXYD	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.cpp	/^unsigned int BitLayer::makeHashXYD(unsigned int x,unsigned int y)$/;"	function	line:212	class:BitLayer	signature:(unsigned int x,unsigned int y)
-decodeHashXYD	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.cpp	/^Vec2 BitLayer::decodeHashXYD(unsigned int hash)$/;"	function	line:218	class:BitLayer	signature:(unsigned int hash)
-makeOwnSpriteBatchNode	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.cpp	/^void BitLayer::makeOwnSpriteBatchNode()$/;"	function	line:235	class:BitLayer	signature:()
-createWithLayerInfoFile	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.cpp	/^BitLayer* BitLayer::createWithLayerInfoFile(std::string file)$/;"	function	line:248	class:BitLayer	signature:(std::string file)
-getTileInfoAtGridPos	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.cpp	/^BitLayer::TileInfo BitLayer::getTileInfoAtGridPos(unsigned int x,unsigned int y)$/;"	function	line:261	class:BitLayer	signature:(unsigned int x,unsigned int y)
-isOwnAnyTileAt	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.cpp	/^bool BitLayer::isOwnAnyTileAt(unsigned int x,unsigned int y)$/;"	function	line:266	class:BitLayer	signature:(unsigned int x,unsigned int y)
-isVisible	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.cpp	/^bool BitLayer::isVisible()$/;"	function	line:271	class:BitLayer	signature:()
-BitLayer	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.cpp	/^BitLayer::BitLayer()$/;"	function	line:11	class:BitLayer	signature:()
-~BitLayer	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.cpp	/^BitLayer::~BitLayer()$/;"	function	line:20	class:BitLayer	signature:()
-initWithLayerInfoFile	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.cpp	/^bool BitLayer::initWithLayerInfoFile(std::string file)$/;"	function	line:26	class:BitLayer	signature:(std::string file)
-parseLayerInfoFile	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.cpp	/^bool BitLayer::parseLayerInfoFile(std::string file)$/;"	function	line:59	class:BitLayer	signature:(std::string file)
-countDigitBinary	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.cpp	/^int BitLayer::countDigitBinary(unsigned int n)$/;"	function	line:166	class:BitLayer	signature:(unsigned int n)
-makeHashXYD	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.cpp	/^unsigned int BitLayer::makeHashXYD(unsigned int x,unsigned int y)$/;"	function	line:212	class:BitLayer	signature:(unsigned int x,unsigned int y)
-decodeHashXYD	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.cpp	/^Vec2 BitLayer::decodeHashXYD(unsigned int hash)$/;"	function	line:218	class:BitLayer	signature:(unsigned int hash)
-makeOwnSpriteBatchNode	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.cpp	/^void BitLayer::makeOwnSpriteBatchNode()$/;"	function	line:235	class:BitLayer	signature:()
-createWithLayerInfoFile	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.cpp	/^BitLayer* BitLayer::createWithLayerInfoFile(std::string file)$/;"	function	line:248	class:BitLayer	signature:(std::string file)
-getTileInfoAtGridPos	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.cpp	/^BitLayer::TileInfo BitLayer::getTileInfoAtGridPos(unsigned int x,unsigned int y)$/;"	function	line:261	class:BitLayer	signature:(unsigned int x,unsigned int y)
-isOwnAnyTileAt	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.cpp	/^bool BitLayer::isOwnAnyTileAt(unsigned int x,unsigned int y)$/;"	function	line:266	class:BitLayer	signature:(unsigned int x,unsigned int y)
-isVisible	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.cpp	/^bool BitLayer::isVisible()$/;"	function	line:271	class:BitLayer	signature:()
 BIT_LAYER_H	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.h	/^#define BIT_LAYER_H$/;"	macro	line:2
 BitLayer	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.h	/^class BitLayer : public cocos2d::Ref$/;"	class	line:8
 x	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.h	/^		unsigned int x;$/;"	member	line:12	struct:BitLayer::__anon1
@@ -6121,33 +6097,6 @@ register_all_packages	/home/daichi/dev/cocos-projects/ProjectX/Classes/AppDelega
 applicationDidFinishLaunching	/home/daichi/dev/cocos-projects/ProjectX/Classes/AppDelegate.cpp	/^bool AppDelegate::applicationDidFinishLaunching() {$/;"	function	line:36	class:AppDelegate	signature:()
 applicationDidEnterBackground	/home/daichi/dev/cocos-projects/ProjectX/Classes/AppDelegate.cpp	/^void AppDelegate::applicationDidEnterBackground() {$/;"	function	line:86	class:AppDelegate	signature:()
 applicationWillEnterForeground	/home/daichi/dev/cocos-projects/ProjectX/Classes/AppDelegate.cpp	/^void AppDelegate::applicationWillEnterForeground() {$/;"	function	line:94	class:AppDelegate	signature:()
-UNIFIED_LAYER_H	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.h	/^#define UNIFIED_LAYER_H$/;"	macro	line:2
-UnifiedLayer	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.h	/^class UnifiedLayer : public cocos2d::Node$/;"	class	line:7
-_bitLayers	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.h	/^	cocos2d::Vector<BitLayer*> _bitLayers;$/;"	member	line:21	class:UnifiedLayer
-_tiles	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.h	/^	int* _tiles;$/;"	member	line:22	class:UnifiedLayer
-_atIndex	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.h	/^	size_t _atIndex;$/;"	member	line:23	class:UnifiedLayer
-UNIFIED_LAYER_H	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.h	/^#define UNIFIED_LAYER_H$/;"	macro	line:2
-UnifiedLayer	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.h	/^class UnifiedLayer : public cocos2d::Node$/;"	class	line:7
-_bitLayers	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.h	/^	cocos2d::Vector<BitLayer*> _bitLayers;$/;"	member	line:21	class:UnifiedLayer
-_tiles	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.h	/^	int* _tiles;$/;"	member	line:22	class:UnifiedLayer
-_atIndex	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.h	/^	size_t _atIndex;$/;"	member	line:23	class:UnifiedLayer
-UNIFIED_LAYER_H	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.h	/^#define UNIFIED_LAYER_H$/;"	macro	line:2
-UnifiedLayer	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.h	/^class UnifiedLayer : public cocos2d::Node$/;"	class	line:7
-_bitLayers	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.h	/^	cocos2d::Vector<BitLayer*> _bitLayers;$/;"	member	line:21	class:UnifiedLayer
-_tiles	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.h	/^	int* _tiles;$/;"	member	line:22	class:UnifiedLayer
-_atIndex	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.h	/^	size_t _atIndex;$/;"	member	line:23	class:UnifiedLayer
-TILED_MAP_2P5D_H	/home/daichi/dev/cocos-projects/ProjectX/Classes/TiledMap2P5D.h	/^#define TILED_MAP_2P5D_H$/;"	macro	line:2
-TiledMap2P5D	/home/daichi/dev/cocos-projects/ProjectX/Classes/TiledMap2P5D.h	/^class TiledMap2P5D : public cocos2d::Node$/;"	class	line:8
-_layers	/home/daichi/dev/cocos-projects/ProjectX/Classes/TiledMap2P5D.h	/^	cocos2d::Vector<UnifiedLayer*> _layers;$/;"	member	line:21	class:TiledMap2P5D
-createScene	/home/daichi/dev/cocos-projects/ProjectX/Classes/HelloWorldScene.cpp	/^Scene* HelloWorld::createScene()$/;"	function	line:9	class:HelloWorld	signature:()
-init	/home/daichi/dev/cocos-projects/ProjectX/Classes/HelloWorldScene.cpp	/^bool HelloWorld::init()$/;"	function	line:25	class:HelloWorld	signature:()
-menuCloseCallback	/home/daichi/dev/cocos-projects/ProjectX/Classes/HelloWorldScene.cpp	/^void HelloWorld::menuCloseCallback(Ref* pSender)$/;"	function	line:95	class:HelloWorld	signature:(Ref* pSender)
-MAX_UNIFIED_LAYERS_NUM	/home/daichi/dev/cocos-projects/ProjectX/Classes/TiledMap2P5D.cpp	/^const size_t MAX_UNIFIED_LAYERS_NUM = 5;$/;"	variable	line:9
-TiledMap2P5D	/home/daichi/dev/cocos-projects/ProjectX/Classes/TiledMap2P5D.cpp	/^TiledMap2P5D::TiledMap2P5D()$/;"	function	line:14	class:TiledMap2P5D	signature:()
-~TiledMap2P5D	/home/daichi/dev/cocos-projects/ProjectX/Classes/TiledMap2P5D.cpp	/^TiledMap2P5D::~TiledMap2P5D()$/;"	function	line:17	class:TiledMap2P5D	signature:()
-initWithFile	/home/daichi/dev/cocos-projects/ProjectX/Classes/TiledMap2P5D.cpp	/^bool TiledMap2P5D::initWithFile(std::string file)$/;"	function	line:20	class:TiledMap2P5D	signature:(std::string file)
-addUnifiedLayer	/home/daichi/dev/cocos-projects/ProjectX/Classes/TiledMap2P5D.cpp	/^void TiledMap2P5D::addUnifiedLayer(size_t index)$/;"	function	line:50	class:TiledMap2P5D	signature:(size_t index)
-create	/home/daichi/dev/cocos-projects/ProjectX/Classes/TiledMap2P5D.cpp	/^TiledMap2P5D* TiledMap2P5D::create(std::string file)$/;"	function	line:86	class:TiledMap2P5D	signature:(std::string file)
 TM2P5D_COMMON_INFO_H	/home/daichi/dev/cocos-projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^#define TM2P5D_COMMON_INFO_H$/;"	macro	line:2
 StrVector	/home/daichi/dev/cocos-projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^typedef std::vector<std::string> StrVector;$/;"	typedef	line:8
 ItrVector	/home/daichi/dev/cocos-projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^typedef std::vector<StrVector::iterator> ItrVector;$/;"	typedef	line:9
@@ -6155,6 +6104,9 @@ TM2P5DCommonInfo	/home/daichi/dev/cocos-projects/ProjectX/Classes/TM2P5DCommonIn
 _allLayers	/home/daichi/dev/cocos-projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^	StrVector _allLayers;$/;"	member	line:27	class:TM2P5DCommonInfo
 _unifiledLayerHeads	/home/daichi/dev/cocos-projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^	ItrVector _unifiledLayerHeads;$/;"	member	line:28	class:TM2P5DCommonInfo
 _tileSheetNode	/home/daichi/dev/cocos-projects/ProjectX/Classes/TM2P5DCommonInfo.h	/^	std::unordered_map<std::string,size_t> _tileSheetNode;$/;"	member	line:29	class:TM2P5DCommonInfo
+createScene	/home/daichi/dev/cocos-projects/ProjectX/Classes/HelloWorldScene.cpp	/^Scene* HelloWorld::createScene()$/;"	function	line:9	class:HelloWorld	signature:()
+init	/home/daichi/dev/cocos-projects/ProjectX/Classes/HelloWorldScene.cpp	/^bool HelloWorld::init()$/;"	function	line:25	class:HelloWorld	signature:()
+menuCloseCallback	/home/daichi/dev/cocos-projects/ProjectX/Classes/HelloWorldScene.cpp	/^void HelloWorld::menuCloseCallback(Ref* pSender)$/;"	function	line:109	class:HelloWorld	signature:(Ref* pSender)
 MAX_DIRECTORY_NAME_LEN	/home/daichi/dev/cocos-projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^#define MAX_DIRECTORY_NAME_LEN /;"	macro	line:6	file:
 MAX_FILE_NAME_LEN	/home/daichi/dev/cocos-projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^#define MAX_FILE_NAME_LEN /;"	macro	line:7	file:
 _sharedInstance	/home/daichi/dev/cocos-projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^static TM2P5DCommonInfo* _sharedInstance = nullptr;$/;"	variable	line:12	file:
@@ -6167,10 +6119,77 @@ initWithFile	/home/daichi/dev/cocos-projects/ProjectX/Classes/TM2P5DCommonInfo.c
 getBitLayerNamesInUnifiedLayer	/home/daichi/dev/cocos-projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^StrVector TM2P5DCommonInfo::getBitLayerNamesInUnifiedLayer(size_t index)$/;"	function	line:243	class:TM2P5DCommonInfo	signature:(size_t index)
 getAllBitLayerNames	/home/daichi/dev/cocos-projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^const StrVector& TM2P5DCommonInfo::getAllBitLayerNames()$/;"	function	line:263	class:TM2P5DCommonInfo	signature:()
 getNumOfTilesForTileSheetName	/home/daichi/dev/cocos-projects/ProjectX/Classes/TM2P5DCommonInfo.cpp	/^unsigned int TM2P5DCommonInfo::getNumOfTilesForTileSheetName(std::string name)$/;"	function	line:268	class:TM2P5DCommonInfo	signature:(std::string name)
+BitLayer	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.cpp	/^BitLayer::BitLayer()$/;"	function	line:11	class:BitLayer	signature:()
+~BitLayer	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.cpp	/^BitLayer::~BitLayer()$/;"	function	line:20	class:BitLayer	signature:()
+initWithLayerInfoFile	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.cpp	/^bool BitLayer::initWithLayerInfoFile(std::string file)$/;"	function	line:26	class:BitLayer	signature:(std::string file)
+parseLayerInfoFile	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.cpp	/^bool BitLayer::parseLayerInfoFile(std::string file)$/;"	function	line:59	class:BitLayer	signature:(std::string file)
+countDigitBinary	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.cpp	/^int BitLayer::countDigitBinary(unsigned int n)$/;"	function	line:166	class:BitLayer	signature:(unsigned int n)
+makeHashXYD	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.cpp	/^unsigned int BitLayer::makeHashXYD(unsigned int x,unsigned int y)$/;"	function	line:212	class:BitLayer	signature:(unsigned int x,unsigned int y)
+decodeHashXYD	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.cpp	/^Vec2 BitLayer::decodeHashXYD(unsigned int hash)$/;"	function	line:218	class:BitLayer	signature:(unsigned int hash)
+makeOwnSpriteBatchNode	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.cpp	/^void BitLayer::makeOwnSpriteBatchNode()$/;"	function	line:235	class:BitLayer	signature:()
+createWithLayerInfoFile	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.cpp	/^BitLayer* BitLayer::createWithLayerInfoFile(std::string file)$/;"	function	line:248	class:BitLayer	signature:(std::string file)
+getTileInfoAtGridPos	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.cpp	/^BitLayer::TileInfo BitLayer::getTileInfoAtGridPos(unsigned int x,unsigned int y)$/;"	function	line:261	class:BitLayer	signature:(unsigned int x,unsigned int y)
+isOwnAnyTileAt	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.cpp	/^bool BitLayer::isOwnAnyTileAt(unsigned int x,unsigned int y)$/;"	function	line:266	class:BitLayer	signature:(unsigned int x,unsigned int y)
+isVisible	/home/daichi/dev/cocos-projects/ProjectX/Classes/BitLayer.cpp	/^bool BitLayer::isVisible()$/;"	function	line:271	class:BitLayer	signature:()
+UNIFIED_LAYER_H	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.h	/^#define UNIFIED_LAYER_H$/;"	macro	line:2
+UnifiedLayer	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.h	/^class UnifiedLayer : public cocos2d::Node$/;"	class	line:7
+gr	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.h	/^	typedef struct gr {$/;"	struct	line:10	class:UnifiedLayer
+x	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.h	/^		size_t x;$/;"	member	line:11	struct:UnifiedLayer::gr
+y	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.h	/^	 	size_t y;$/;"	member	line:12	struct:UnifiedLayer::gr
+width	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.h	/^		size_t width;$/;"	member	line:13	struct:UnifiedLayer::gr
+height	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.h	/^		size_t height;$/;"	member	line:14	struct:UnifiedLayer::gr
+gr	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.h	/^		gr(size_t xp,size_t yp,size_t w,size_t h)$/;"	function	line:16	struct:UnifiedLayer::gr	signature:(size_t xp,size_t yp,size_t w,size_t h)
+GridRect	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.h	/^	} GridRect;$/;"	typedef	line:23	class:UnifiedLayer	typeref:struct:UnifiedLayer::gr
+_bitLayers	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.h	/^	cocos2d::Vector<BitLayer*> _bitLayers;$/;"	member	line:37	class:UnifiedLayer
+_tiles	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.h	/^	int* _tiles;$/;"	member	line:38	class:UnifiedLayer
+_atIndex	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.h	/^	size_t _atIndex;$/;"	member	line:39	class:UnifiedLayer
+MAX_UNIFIED_LAYERS_NUM	/home/daichi/dev/cocos-projects/ProjectX/Classes/TiledMap2P5D.cpp	/^const size_t MAX_UNIFIED_LAYERS_NUM = 5;$/;"	variable	line:9
+GRID_CLEARANCE	/home/daichi/dev/cocos-projects/ProjectX/Classes/TiledMap2P5D.cpp	/^const size_t GRID_CLEARANCE = 1;$/;"	variable	line:10
+DEFAULT_MAP_POS_X	/home/daichi/dev/cocos-projects/ProjectX/Classes/TiledMap2P5D.cpp	/^const float DEFAULT_MAP_POS_X = 0.0;$/;"	variable	line:11
+DEFAULT_MAP_POS_Y	/home/daichi/dev/cocos-projects/ProjectX/Classes/TiledMap2P5D.cpp	/^const float DEFAULT_MAP_POS_Y = 0.0;$/;"	variable	line:12
+TiledMap2P5D	/home/daichi/dev/cocos-projects/ProjectX/Classes/TiledMap2P5D.cpp	/^TiledMap2P5D::TiledMap2P5D()$/;"	function	line:17	class:TiledMap2P5D	signature:()
+~TiledMap2P5D	/home/daichi/dev/cocos-projects/ProjectX/Classes/TiledMap2P5D.cpp	/^TiledMap2P5D::~TiledMap2P5D()$/;"	function	line:22	class:TiledMap2P5D	signature:()
+initWithFile	/home/daichi/dev/cocos-projects/ProjectX/Classes/TiledMap2P5D.cpp	/^bool TiledMap2P5D::initWithFile(std::string file)$/;"	function	line:25	class:TiledMap2P5D	signature:(std::string file)
+addUnifiedLayer	/home/daichi/dev/cocos-projects/ProjectX/Classes/TiledMap2P5D.cpp	/^bool TiledMap2P5D::addUnifiedLayer(size_t index)$/;"	function	line:66	class:TiledMap2P5D	signature:(size_t index)
+resizeDrawnRect	/home/daichi/dev/cocos-projects/ProjectX/Classes/TiledMap2P5D.cpp	/^void TiledMap2P5D::resizeDrawnRect()$/;"	function	line:105	class:TiledMap2P5D	signature:()
+create	/home/daichi/dev/cocos-projects/ProjectX/Classes/TiledMap2P5D.cpp	/^TiledMap2P5D* TiledMap2P5D::create(std::string file)$/;"	function	line:135	class:TiledMap2P5D	signature:(std::string file)
+getLambdaOnTouchMoved	/home/daichi/dev/cocos-projects/ProjectX/Classes/TiledMap2P5D.cpp	/^ccTouchCallback TiledMap2P5D::getLambdaOnTouchMoved()$/;"	function	line:148	class:TiledMap2P5D	signature:()
+create	/home/daichi/dev/cocos-projects/ProjectX/cocos2d/cocos/2d/CCTMXLayer.cpp	/^TMXLayer * TMXLayer::create(TMXTilesetInfo *tilesetInfo, TMXLayerInfo *layerInfo, TMXMapInfo *mapInfo)$/;"	function	line:41	class:TMXLayer	signature:(TMXTilesetInfo *tilesetInfo, TMXLayerInfo *layerInfo, TMXMapInfo *mapInfo)
+initWithTilesetInfo	/home/daichi/dev/cocos-projects/ProjectX/cocos2d/cocos/2d/CCTMXLayer.cpp	/^bool TMXLayer::initWithTilesetInfo(TMXTilesetInfo *tilesetInfo, TMXLayerInfo *layerInfo, TMXMapInfo *mapInfo)$/;"	function	line:52	class:TMXLayer	signature:(TMXTilesetInfo *tilesetInfo, TMXLayerInfo *layerInfo, TMXMapInfo *mapInfo)
+TMXLayer	/home/daichi/dev/cocos-projects/ProjectX/cocos2d/cocos/2d/CCTMXLayer.cpp	/^TMXLayer::TMXLayer()$/;"	function	line:119	class:TMXLayer	signature:()
+~TMXLayer	/home/daichi/dev/cocos-projects/ProjectX/cocos2d/cocos/2d/CCTMXLayer.cpp	/^TMXLayer::~TMXLayer()$/;"	function	line:137	class:TMXLayer	signature:()
+releaseMap	/home/daichi/dev/cocos-projects/ProjectX/cocos2d/cocos/2d/CCTMXLayer.cpp	/^void TMXLayer::releaseMap()$/;"	function	line:151	class:TMXLayer	signature:()
+setupTiles	/home/daichi/dev/cocos-projects/ProjectX/cocos2d/cocos/2d/CCTMXLayer.cpp	/^void TMXLayer::setupTiles()$/;"	function	line:167	class:TMXLayer	signature:()
+getProperty	/home/daichi/dev/cocos-projects/ProjectX/cocos2d/cocos/2d/CCTMXLayer.cpp	/^Value TMXLayer::getProperty(const std::string& propertyName) const$/;"	function	line:226	class:TMXLayer	signature:(const std::string& propertyName) const
+parseInternalProperties	/home/daichi/dev/cocos-projects/ProjectX/cocos2d/cocos/2d/CCTMXLayer.cpp	/^void TMXLayer::parseInternalProperties()$/;"	function	line:234	class:TMXLayer	signature:()
+setupTileSprite	/home/daichi/dev/cocos-projects/ProjectX/cocos2d/cocos/2d/CCTMXLayer.cpp	/^void TMXLayer::setupTileSprite(Sprite* sprite, const Vec2& pos, uint32_t gid)$/;"	function	line:266	class:TMXLayer	signature:(Sprite* sprite, const Vec2& pos, uint32_t gid)
+reusedTileWithRect	/home/daichi/dev/cocos-projects/ProjectX/cocos2d/cocos/2d/CCTMXLayer.cpp	/^Sprite* TMXLayer::reusedTileWithRect(const Rect& rect)$/;"	function	line:323	class:TMXLayer	signature:(const Rect& rect)
+getTileAt	/home/daichi/dev/cocos-projects/ProjectX/cocos2d/cocos/2d/CCTMXLayer.cpp	/^Sprite * TMXLayer::getTileAt(const Vec2& pos)$/;"	function	line:348	class:TMXLayer	signature:(const Vec2& pos)
+getTileGIDAt	/home/daichi/dev/cocos-projects/ProjectX/cocos2d/cocos/2d/CCTMXLayer.cpp	/^uint32_t TMXLayer::getTileGIDAt(const Vec2& pos, TMXTileFlags* flags\/* = nullptr*\/)$/;"	function	line:383	class:TMXLayer	signature:(const Vec2& pos, TMXTileFlags* flags )
+insertTileForGID	/home/daichi/dev/cocos-projects/ProjectX/cocos2d/cocos/2d/CCTMXLayer.cpp	/^Sprite * TMXLayer::insertTileForGID(uint32_t gid, const Vec2& pos)$/;"	function	line:402	class:TMXLayer	signature:(uint32_t gid, const Vec2& pos)
+updateTileForGID	/home/daichi/dev/cocos-projects/ProjectX/cocos2d/cocos/2d/CCTMXLayer.cpp	/^Sprite * TMXLayer::updateTileForGID(uint32_t gid, const Vec2& pos)$/;"	function	line:442	class:TMXLayer	signature:(uint32_t gid, const Vec2& pos)
+getZForPos	/home/daichi/dev/cocos-projects/ProjectX/cocos2d/cocos/2d/CCTMXLayer.cpp	/^intptr_t TMXLayer::getZForPos(const Vec2& pos) const$/;"	function	line:462	class:TMXLayer	signature:(const Vec2& pos) const
+appendTileForGID	/home/daichi/dev/cocos-projects/ProjectX/cocos2d/cocos/2d/CCTMXLayer.cpp	/^Sprite * TMXLayer::appendTileForGID(uint32_t gid, const Vec2& pos)$/;"	function	line:493	class:TMXLayer	signature:(uint32_t gid, const Vec2& pos)
+compareInts	/home/daichi/dev/cocos-projects/ProjectX/cocos2d/cocos/2d/CCTMXLayer.cpp	/^static inline int compareInts(const void * a, const void * b)$/;"	function	line:533	file:	signature:(const void * a, const void * b)
+atlasIndexForExistantZ	/home/daichi/dev/cocos-projects/ProjectX/cocos2d/cocos/2d/CCTMXLayer.cpp	/^ssize_t TMXLayer::atlasIndexForExistantZ(int z)$/;"	function	line:540	class:TMXLayer	signature:(int z)
+atlasIndexForNewZ	/home/daichi/dev/cocos-projects/ProjectX/cocos2d/cocos/2d/CCTMXLayer.cpp	/^ssize_t TMXLayer::atlasIndexForNewZ(int z)$/;"	function	line:551	class:TMXLayer	signature:(int z)
+setTileGID	/home/daichi/dev/cocos-projects/ProjectX/cocos2d/cocos/2d/CCTMXLayer.cpp	/^void TMXLayer::setTileGID(uint32_t gid, const Vec2& pos)$/;"	function	line:568	class:TMXLayer	signature:(uint32_t gid, const Vec2& pos)
+setTileGID	/home/daichi/dev/cocos-projects/ProjectX/cocos2d/cocos/2d/CCTMXLayer.cpp	/^void TMXLayer::setTileGID(uint32_t gid, const Vec2& pos, TMXTileFlags flags)$/;"	function	line:573	class:TMXLayer	signature:(uint32_t gid, const Vec2& pos, TMXTileFlags flags)
+addChild	/home/daichi/dev/cocos-projects/ProjectX/cocos2d/cocos/2d/CCTMXLayer.cpp	/^void TMXLayer::addChild(Node* \/*child*\/, int \/*zOrder*\/, int \/*tag*\/)$/;"	function	line:621	class:TMXLayer	signature:(Node* , int , int )
+removeChild	/home/daichi/dev/cocos-projects/ProjectX/cocos2d/cocos/2d/CCTMXLayer.cpp	/^void TMXLayer::removeChild(Node* node, bool cleanup)$/;"	function	line:626	class:TMXLayer	signature:(Node* node, bool cleanup)
+removeTileAt	/home/daichi/dev/cocos-projects/ProjectX/cocos2d/cocos/2d/CCTMXLayer.cpp	/^void TMXLayer::removeTileAt(const Vec2& pos)$/;"	function	line:644	class:TMXLayer	signature:(const Vec2& pos)
+calculateLayerOffset	/home/daichi/dev/cocos-projects/ProjectX/cocos2d/cocos/2d/CCTMXLayer.cpp	/^Vec2 TMXLayer::calculateLayerOffset(const Vec2& pos)$/;"	function	line:686	class:TMXLayer	signature:(const Vec2& pos)
+getPositionAt	/home/daichi/dev/cocos-projects/ProjectX/cocos2d/cocos/2d/CCTMXLayer.cpp	/^Vec2 TMXLayer::getPositionAt(const Vec2& pos)$/;"	function	line:727	class:TMXLayer	signature:(const Vec2& pos)
+getPositionForOrthoAt	/home/daichi/dev/cocos-projects/ProjectX/cocos2d/cocos/2d/CCTMXLayer.cpp	/^Vec2 TMXLayer::getPositionForOrthoAt(const Vec2& pos)$/;"	function	line:749	class:TMXLayer	signature:(const Vec2& pos)
+getPositionForIsoAt	/home/daichi/dev/cocos-projects/ProjectX/cocos2d/cocos/2d/CCTMXLayer.cpp	/^Vec2 TMXLayer::getPositionForIsoAt(const Vec2& pos)$/;"	function	line:755	class:TMXLayer	signature:(const Vec2& pos)
+getPositionForHexAt	/home/daichi/dev/cocos-projects/ProjectX/cocos2d/cocos/2d/CCTMXLayer.cpp	/^Vec2 TMXLayer::getPositionForHexAt(const Vec2& pos)$/;"	function	line:761	class:TMXLayer	signature:(const Vec2& pos)
+getPositionForStaggeredAt	/home/daichi/dev/cocos-projects/ProjectX/cocos2d/cocos/2d/CCTMXLayer.cpp	/^Vec2 TMXLayer::getPositionForStaggeredAt(const Vec2 &pos)$/;"	function	line:797	class:TMXLayer	signature:(const Vec2 &pos)
+getVertexZForPos	/home/daichi/dev/cocos-projects/ProjectX/cocos2d/cocos/2d/CCTMXLayer.cpp	/^int TMXLayer::getVertexZForPos(const Vec2& pos)$/;"	function	line:808	class:TMXLayer	signature:(const Vec2& pos)
+getDescription	/home/daichi/dev/cocos-projects/ProjectX/cocos2d/cocos/2d/CCTMXLayer.cpp	/^std::string TMXLayer::getDescription() const$/;"	function	line:842	class:TMXLayer	signature:() const
 UnifiedLayer	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.cpp	/^UnifiedLayer::UnifiedLayer()$/;"	function	line:11	class:UnifiedLayer	signature:()
 ~UnifiedLayer	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.cpp	/^UnifiedLayer::~UnifiedLayer()$/;"	function	line:16	class:UnifiedLayer	signature:()
 initWithLayerIndex	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.cpp	/^bool UnifiedLayer::initWithLayerIndex(size_t index)$/;"	function	line:22	class:UnifiedLayer	signature:(size_t index)
 convertGridPosToLocalPos	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.cpp	/^Vec2 UnifiedLayer::convertGridPosToLocalPos(unsigned int x,unsigned int y,const Size& tileSize)$/;"	function	line:46	class:UnifiedLayer	signature:(unsigned int x,unsigned int y,const Size& tileSize)
 createWithLayerIndex	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.cpp	/^UnifiedLayer* UnifiedLayer::createWithLayerIndex(size_t index)$/;"	function	line:55	class:UnifiedLayer	signature:(size_t index)
 addBitLayer	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.cpp	/^void UnifiedLayer::addBitLayer(std::string file,int flag)$/;"	function	line:68	class:UnifiedLayer	signature:(std::string file,int flag)
-makeTileSpriets	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.cpp	/^void UnifiedLayer::makeTileSpriets()$/;"	function	line:98	class:UnifiedLayer	signature:()
+makeTileSpriets	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.cpp	/^void UnifiedLayer::makeTileSpriets(GridRect makeGr)$/;"	function	line:98	class:UnifiedLayer	signature:(GridRect makeGr)

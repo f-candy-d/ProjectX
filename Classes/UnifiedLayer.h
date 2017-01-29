@@ -6,6 +6,22 @@
 
 class UnifiedLayer : public cocos2d::Node
 {
+public:
+	typedef struct gr {
+		size_t x;
+	 	size_t y;
+		size_t width;
+		size_t height;
+
+		gr(size_t xp,size_t yp,size_t w,size_t h)
+		{
+			x = xp;
+			y = yp;
+			width = w;
+			height = h;
+		}
+	} GridRect;
+
 protected:
 	UnifiedLayer();
 	virtual ~UnifiedLayer();
@@ -49,8 +65,10 @@ public:
 
 	/**
 	 * [makeTileSpriets description]
+	 * @method makeTileSpriets
+	 * @param  makeGr          [description]
 	 */
-	void makeTileSpriets();
+	void makeTileSpriets(GridRect makeGr);
 };
 
 #endif /* defined(UNIFIED_LAYER_H) */
