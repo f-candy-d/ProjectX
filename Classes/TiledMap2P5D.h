@@ -27,6 +27,7 @@ protected:
 
 private:
 	cocos2d::Vector<UnifiedLayer*> _layers;
+	cocos2d::Vec2 _pastPosition;
 	cocos2d::Rect _visibleRect;
 	UnifiedLayer::GridRect _drawnGridRect;
 
@@ -44,7 +45,17 @@ private:
 	 */
 	void resizeDrawnRect();
 
+	/**
+	 * Resize drawn grid rect if the map moves more than the distance
+	 * that is longer than the width/height of a tile.
+	 * Call this function in update().
+	 * @return [description]
+	 */
+	cocos2d::Vec2 optimizeDrawnGridRect();
+
 public:
+	void update(float dt);
+
 	/**
 	 * [create description]
 	 * @param  file [This must be map_info.dat]

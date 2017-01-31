@@ -42,21 +42,6 @@ private:
 	int countDigitBinary(unsigned int n);
 
 	/**
-	 * [makeHashXYD description]
-	 * @param  x [description]
-	 * @param  y [description]
-	 * @return   [description]
-	 */
-	unsigned int makeHashXYD(unsigned int x,unsigned int y);
-
-	/**
-	 * [decodeHashXYD description]
-	 * @param  hash [description]
-	 * @return      [description]
-	 */
-	cocos2d::Vec2 decodeHashXYD(unsigned int hash);
-
-	/**
 	 * [makeOwnSpriteBatchNode description]
 	 */
 	void makeOwnSpriteBatchNode();
@@ -87,6 +72,21 @@ public:
 	bool isOwnAnyTileAt(unsigned int x,unsigned int y);
 
 	bool isVisible();
+
+	/**
+	 * [makeHashXYD description]
+	 * @param  x [description]
+	 * @param  y [description]
+	 * @return   [description]
+	 */
+	unsigned int makeHashXYD(unsigned int x,unsigned int y);
+
+	/**
+	 * [decodeHashXYD description]
+	 * @param  hash [description]
+	 * @return      [description]
+	 */
+	cocos2d::Vec2 decodeHashXYD(unsigned int hash);
 
 };
 

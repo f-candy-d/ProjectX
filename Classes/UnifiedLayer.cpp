@@ -48,6 +48,48 @@ Vec2 UnifiedLayer::convertGridPosToLocalPos(unsigned int x,unsigned int y,const 
 	return Vec2(tileSize.width * (x + 0.5),tileSize.height * (y + 0.5));
 }
 
+Sprite* UnifiedLayer::reInitTileSprite(cocos2d::Sprite* oldTile,size_t x,size_t y)
+{
+	if(oldTile == nullptr)
+	{
+		//Create new sprite.
+		auto tile_size = TM2P5DCommonInfo::getInstance()->getTileSizePx();
+		auto grid_size = TM2P5DCommonInfo::getInstance()->getGridSize();
+		int nw;
+		Size texture_size;
+		float p,q;
+		BitLayer::TileInfo tile_info;
+		for(const auto& bit_layer : _bitLayers)
+		{
+			size_t index = x * grid_size.height + y;
+			if(bit_layer->getBitFlag() & _tiles[index])
+			{
+				//Make a Rect object.
+				texture_size = bit_layer->getSpriteBatchNode()->getTextureAtlas()->getTexture()->getContentSize();
+				tile_info = bit_layer->getTileInfoAtGridPos(x,y);
+				nw = texture_size.width / tile_size.width;
+				q = tile_size.height * static_cast<int>(tile_info.tileType / nw);
+				p = tile_size.width * (tile_info.tileType - nw * q);
+				auto texture_rect = Rect(p,q,tile_size.width,tile_size.height);
+
+				//Make a tile sprite.
+				auto tile =
+					Sprite::create(TM2P5DCommonInfo::getInstance()->getDirectory() + bit_layer->getTileAtlasFile(),texture_rect);
+				tile->setPosition(convertGridPosToLocalPos(x,y,tile_size));
+				tile->setTag(bit_layer->getBitFlag());
+				bit_layer->getSpriteBatchNode()->addChild(tile);
+
+				return std::move(oldTile);
+			}
+		}
+	}
+	else
+	{
+		//Reuse old sprite object.
+		oldTile->getBatchNode()->removeChild(oldTile,true);
+		
+}
+
 /**
  * public functions
  */
@@ -106,8 +148,6 @@ void UnifiedLayer::makeTileSpriets(GridRect makeGr)
 	float p,q;
 	BitLayer::TileInfo tile_info;
 
-	int c = 0;
-
 	for(unsigned int x = makeGr.x; x < makeGr.width; ++x)
 	{
 		for(unsigned int y = makeGr.y; y < makeGr.height; ++y,++pt)
@@ -126,11 +166,15 @@ void UnifiedLayer::makeTileSpriets(GridRect makeGr)
 					// log("texture_rect[%f,%f,%f.0,%f.0] type=%d nw=%d x=%d y=%d",p,q,texture_size.width,texture_size.height,tile_info.tileType,nw,x,y);
 
 					//Make a tile sprite.
-					auto tile = Sprite::create(
-						TM2P5DCommonInfo::getInstance()->getDirectory() + bit_layer->getTileAtlasFile(),texture_rect);
+					auto tile =
+						Sprite::create(TM2P5DCommonInfo::getInstance()->getDirectory() + bit_layer->getTileAtlasFile(),texture_rect);
 					tile->setPosition(convertGridPosToLocalPos(x,y,tile_size));
 					bit_layer->getSpriteBatchNode()->addChild(tile);
-					c++;
+
+					//Add new sprite into Map.
+					size_t hash = bit_layer->makeHashXYD(x,y);
+					tile->setTag(bit_layer->getBitFlag());
+					_tileSprites.insert(hash,tile);
 
 					break;
 				}
@@ -138,6 +182,96 @@ void UnifiedLayer::makeTileSpriets(GridRect makeGr)
 		}
 		pt += diff;
 	}
+}
 
-	log("<<<<<<<<<<<<<<Made %d tiles>>>>>>>>>>>>>makeGr(%zu)",c,makeGr.width*makeGr.height);
+void UnifiedLayer::optimizeTileSprites(Vec2 netMv)
+{
+	Sprite* tmpSp = nullptr;
+	size_t new_p;
+
+	if(netMv.x != 0)
+	{
+		//If netMv.x > 0, The drawnGridRect moved to right of the screen from left of that.
+		//Otherwise it moved to opposite side of the screen.
+
+		//Remove old tile sprite.
+		for(size_t x =
+				(netMv.x > 0)
+				? _drawnGridRect.x - netMv.x
+				: _drawnGridRect.x + _drawnGridRect.width -1 - netMv.x,
+			i = 0;
+			i < std::fabs(netMv.x);
+			++i,++x)
+		{
+			for(size_t y = _drawnGridRect.y; y < drawnGridRect.height; ++y)
+			{
+				hash = makeHashXYD(x,y);
+				if((auto itr = _tileSprites.find(makeHashXYD(x,y)) != _tileSprites.end()))
+				{
+					//Get Sprite* from the iterator.
+					tmpSp = itr->second;
+					//Remove an old tile from the hash-map.
+					_tileSprites.erase(itr);
+				}
+
+				//Re-initialize tile sprite.
+				new_p =
+					(netMv.x > 0)
+					? _drawnGridRect.x + _drawnGridRect.width - netMv.x
+					: _drawnGridRect.x + i;
+
+				tmpSp = reInitTileSprite(tmpSp,new_p,y);
+				if(tmpSp != nullptr)
+				{
+					//Restore a tile sprite to the hash-map.
+					_tileSprites.insert(makeHashXYD(new_p,y),tmpSp);
+				}
+
+				tmpSp = nullptr;
+			}
+		}
+	}
+
+	if(netMv.y != 0)
+	{
+		//If netMv.y > 0, The drawnGridRect moved to right of the screen from left of that.
+		//Otherwise it moved to opposite side of the screen.
+
+		//Remove old tile sprite.
+		for(size_t y =
+				(netMv.y > 0)
+				? _drawnGridRect.y - netMv.y
+				: _drawnGridRect.y + _drawnGridRect.width -1 - netMv.y,
+			i = 0;
+			i < std::fabs(netMv.y);
+			++i,++y)
+		{
+			for(size_t x = _drawnGridRect.x; x < drawnGridRect.height; ++x)
+			{
+				hash = makeHashXYD(x,y);
+				if((auto itr = _tileSprites.find(makeHashXYD(x,y)) != _tileSprites.end()))
+				{
+					//Get Sprite* from the iterator.
+					tmpSp = itr->second;
+					//Remove an old tile from the hash-map.
+					_tileSprites.erase(itr);
+				}
+
+				//Re-initialize tile sprite.
+				new_p =
+					(netMv.y > 0)
+					? _drawnGridRect.y + _drawnGridRect.width - netMv.y
+					: _drawnGridRect.y + i;
+
+				tmpSp = reInitTileSprite(tmpSp,x,new_p);
+				if(tmpSp != nullptr)
+				{
+					//Restore a tile sprite to the hash-map.
+					_tileSprites.insert(makeHashXYD(y,new_p),tmpSp);
+				}
+
+				tmpSp = nullptr;
+			}
+		}
+	}
 }

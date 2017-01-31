@@ -35,6 +35,7 @@ protected:
 
 private:
 	cocos2d::Vector<BitLayer*> _bitLayers;
+	cocos2d::Map<size_t,cocos2d::Sprite*> _tileSprites;
 	int* _tiles;
 	size_t _atIndex;
 
@@ -47,6 +48,14 @@ private:
 	 * @return                          [description]
 	 */
 	cocos2d::Vec2 convertGridPosToLocalPos(unsigned int x,unsigned int y,const cocos2d::Size& tileSize);
+
+	/**
+	 * @param  oldTile [description]
+	 * @param  x       [description]
+	 * @param  y       [description]
+	 * @return         [description]
+	 */
+	cocos2d::Sprite* reInitTileSprite(cocos2d::Sprite* oldTile,size_t x,size_t y);
 
 public:
 	/**
@@ -69,6 +78,12 @@ public:
 	 * @param  makeGr          [description]
 	 */
 	void makeTileSpriets(GridRect makeGr);
+
+	/**
+	 * [optimizeTileSprites description]
+	 * @param netMv [description]
+	 */
+	void optimizeTileSprites(const cocos2d::Vec2& netMv);
 };
 
 #endif /* defined(UNIFIED_LAYER_H) */

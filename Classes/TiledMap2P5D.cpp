@@ -15,7 +15,8 @@ const float DEFAULT_MAP_POS_Y = 0.0;
  * protected functions
  */
 TiledMap2P5D::TiledMap2P5D()
-:_visibleRect(0,0,0,0)
+:_pastPosition(0,0)
+,_visibleRect(0,0,0,0)
 ,_drawnGridRect(0,0,0,0)
 {}
 
@@ -42,6 +43,7 @@ bool TiledMap2P5D::initWithFile(std::string file)
 
 	//Set default position
 	this->setPosition(DEFAULT_MAP_POS_X,DEFAULT_MAP_POS_Y);
+	_pastPosition.set(this->getPosition());
 
 	//Setting for recycling tile sprites.
 	resizeDrawnRect();
@@ -55,6 +57,8 @@ bool TiledMap2P5D::initWithFile(std::string file)
 			return false;
 	}
 
+	//Enable to call update().
+	this->scheduleUpdate();
 
 	return true;
 }
@@ -128,9 +132,72 @@ void TiledMap2P5D::resizeDrawnRect()
 	_drawnGridRect.x,_drawnGridRect.y,_drawnGridRect.width,_drawnGridRect.height);
 }
 
+Vec2 TiledMap2P5D::optimizeDrawnGridRect()
+{
+	auto delta = this->getPosition() - _pastPosition;
+	auto tile_size = TM2P5DCommonInfo::getInstance()->getTileSizePx();
+	auto map_size = TM2P5DCommonInfo::getInstance()->getGridSize();
+	auto mv = Vec2(
+		-1 * static_cast<int>(delta.x / tile_size.width),
+		-1 * static_cast<int>(delta.y / tile_size.height));
+	auto net_mv = Vec2(0,0);
+
+	if(mv.x != 0 || mv.y != 0)
+	{
+		//Optimization X
+		if(_drawnGridRect.x + mv.x < 0)
+		{
+			net_mv = 0 - _drawnGridRect.x;
+			_drawnGridRect.x = 0;
+		}
+		else if(_drawnGridRect.x + mv.x + _drawnGridRect.width > map_size.width)
+		{
+			size_t new_x = static_cast<size_t>(map_size.width - _drawnGridRect.width);
+			net_mv.x = new_x - _drawnGridRect.x;
+			_drawnGridRect.x = new_x;
+		}
+		else
+		{
+			_drawnGridRect.x += mv.x;
+			net_mv.x = mv.x;
+		}
+
+		//Optimization Y
+		if(_drawnGridRect.y + mv.y < 0)
+		{
+			net_mv = 0 - _drawnGridRect.y;
+			_drawnGridRect.y = 0;
+		}
+		else if(_drawnGridRect.y + mv.y + _drawnGridRect.height > map_size.height)
+		{
+			size_t new_y = static_cast<size_t>(map_size.height - _drawnGridRect.height);
+			net_mv.y = new_y - _drawnGridRect.y;
+			_drawnGridRect.y = new_y;
+		}
+		else
+		{
+			_drawnGridRect.y += mv.y;
+			net_mv.y = mv.y;
+		}
+
+		_pastPosition.set(this->getPosition());
+
+		log("mv -> (%f,%f)",mv.x,mv.y);
+		log("drawnGridRect(%zu,%zu,%zu,%zu)",
+		_drawnGridRect.x,_drawnGridRect.y,_drawnGridRect.width,_drawnGridRect.height);
+	}
+
+	return net_mv;
+}
+
 /**
  * public functions
  */
+
+void TiledMap2P5D::update(float dt)
+{
+	optimizeDrawnGridRect();
+}
 
 TiledMap2P5D* TiledMap2P5D::create(std::string file)
 {

@@ -4,10 +4,8 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-UnifiedLayer	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.cpp	/^UnifiedLayer::UnifiedLayer()$/;"	function	line:11	class:UnifiedLayer	signature:()
-~UnifiedLayer	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.cpp	/^UnifiedLayer::~UnifiedLayer()$/;"	function	line:16	class:UnifiedLayer	signature:()
-initWithLayerIndex	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.cpp	/^bool UnifiedLayer::initWithLayerIndex(size_t index)$/;"	function	line:22	class:UnifiedLayer	signature:(size_t index)
-convertGridPosToLocalPos	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.cpp	/^Vec2 UnifiedLayer::convertGridPosToLocalPos(unsigned int x,unsigned int y,const Size& tileSize)$/;"	function	line:46	class:UnifiedLayer	signature:(unsigned int x,unsigned int y,const Size& tileSize)
-createWithLayerIndex	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.cpp	/^UnifiedLayer* UnifiedLayer::createWithLayerIndex(size_t index)$/;"	function	line:55	class:UnifiedLayer	signature:(size_t index)
-addBitLayer	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.cpp	/^void UnifiedLayer::addBitLayer(std::string file,int flag)$/;"	function	line:68	class:UnifiedLayer	signature:(std::string file,int flag)
-makeTileSpriets	/home/daichi/dev/cocos-projects/ProjectX/Classes/UnifiedLayer.cpp	/^void UnifiedLayer::makeTileSpriets(GridRect makeGr)$/;"	function	line:98	class:UnifiedLayer	signature:(GridRect makeGr)
+UnifiedLayer	/home/daichi/dev/cocos.projects/ProjectX/Classes/UnifiedLayer.cpp	/^UnifiedLayer::UnifiedLayer()$/;"	function	line:11	class:UnifiedLayer	signature:()
+~UnifiedLayer	/home/daichi/dev/cocos.projects/ProjectX/Classes/UnifiedLayer.cpp	/^UnifiedLayer::~UnifiedLayer()$/;"	function	line:16	class:UnifiedLayer	signature:()
+initWithLayerIndex	/home/daichi/dev/cocos.projects/ProjectX/Classes/UnifiedLayer.cpp	/^bool UnifiedLayer::initWithLayerIndex(size_t index)$/;"	function	line:22	class:UnifiedLayer	signature:(size_t index)
+convertGridPosToLocalPos	/home/daichi/dev/cocos.projects/ProjectX/Classes/UnifiedLayer.cpp	/^Vec2 UnifiedLayer::convertGridPosToLocalPos(unsigned int x,unsigned int y,const Size& tileSize)$/;"	function	line:46	class:UnifiedLayer	signature:(unsigned int x,unsigned int y,const Size& tileSize)
+reInitTileSprite	/home/daichi/dev/cocos.projects/ProjectX/Classes/UnifiedLayer.cpp	/^Sprite* UnifiedLayer::reInitTileSprite(cocos2d::Sprite* oldTile,size_t x,size_t y)$/;"	function	line:51	class:UnifiedLayer	signature:(cocos2d::Sprite* oldTile,size_t x,size_t y)

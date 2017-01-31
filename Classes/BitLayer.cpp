@@ -209,26 +209,6 @@ int BitLayer::countDigitBinary(unsigned int n)
 	return digit;
 }
 
-unsigned int BitLayer::makeHashXYD(unsigned int x,unsigned int y)
-{
-	int dig_y = countDigitBinary(y);
-	return (x * (unsigned int)std::pow(10,dig_y) + y) * 10 + dig_y;
-}
-
-Vec2 BitLayer::decodeHashXYD(unsigned int hash)
-{
-	Vec2 vec = Vec2(-1,-1);
-	int y_digit;
-	int pow_10_y_dg;
-
-	y_digit = hash % 10;
-	hash /= 10;
-	pow_10_y_dg = (int)std::pow(10,y_digit);
-	vec.x = hash / pow_10_y_dg;
-	vec.y = hash - vec.x * pow_10_y_dg;
-	return vec;
-}
-
 /**
  * This function will be only called in initWithLayerInfoFile() function.
  */
@@ -271,4 +251,24 @@ bool BitLayer::isOwnAnyTileAt(unsigned int x,unsigned int y)
 bool BitLayer::isVisible()
 {
 	return _isVisible;
+}
+
+unsigned int BitLayer::makeHashXYD(unsigned int x,unsigned int y)
+{
+	int dig_y = countDigitBinary(y);
+	return (x * (unsigned int)std::pow(10,dig_y) + y) * 10 + dig_y;
+}
+
+Vec2 BitLayer::decodeHashXYD(unsigned int hash)
+{
+	Vec2 vec = Vec2(-1,-1);
+	int y_digit;
+	int pow_10_y_dg;
+
+	y_digit = hash % 10;
+	hash /= 10;
+	pow_10_y_dg = (int)std::pow(10,y_digit);
+	vec.x = hash / pow_10_y_dg;
+	vec.y = hash - vec.x * pow_10_y_dg;
+	return vec;
 }
